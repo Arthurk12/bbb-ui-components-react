@@ -1,0 +1,56 @@
+{
+  "name": "bbb-ui-components-react",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "module": "es6/index.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "build-bundle": "webpack --mode production",
+    "start": "webpack serve --mode development"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.25.6",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@babel/register": "^7.24.6",
+    "@types/styled-components": "^5.1.34",
+    "babel-loader": "^9.2.1",
+    "babel-plugin-styled-components": "^2.1.4",
+    "path": "^0.12.7",
+    "styled-components": "6.1.13",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.6.2",
+    "webpack": "5.94.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "5.0.4"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "styled-components": "^6.1.11"
+  },
+  "dependencies": {
+    "react-toggle": "^4.1.3",
+    "webpack": "^4.18.0"
+  }
+}
