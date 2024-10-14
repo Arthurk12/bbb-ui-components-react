@@ -9,6 +9,7 @@
     "noImplicitAny": true,
     "moduleResolution": "node",
     "declaration": true,
+    "skipLibCheck": true,
     "emitDeclarationOnly": false,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,

@@ -1,13 +1,14 @@
 import path from 'path';
 
 export default {
-  devtool: 'hidden-source-map',
   entry: './src/index.ts',
   output: {
     path: path.resolve('./dist'),
-    filename: 'bbb-ui-components-react.ts',
-    libraryTarget: 'var',
-    library: 'BBBCommonReact',
+    filename: 'index.ts',
+    library: {
+      name: 'BBBUiComponentsReact',
+      type: 'umd', 
+    },
   },
   externals: {
     react: 'react',
@@ -15,14 +16,11 @@ export default {
     'styled-components': 'styled-components',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.json'],
+    extensions: ['.js', '.ts', '.tsx', '.json'],
     fallback: {
       fs: false,
       net: false,
       tls: false,
-    },
-    alias: {
-      'styled-components': require.resolve('styled-components')
     },
   },
   module: {

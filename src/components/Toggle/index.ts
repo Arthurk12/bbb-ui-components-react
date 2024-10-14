@@ -1,1 +1,1 @@
-export { default as CommonToggle } from './component';
+export { default as BBBToggle } from './component';

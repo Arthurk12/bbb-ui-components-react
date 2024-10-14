@@ -1,1 +1,1 @@
-export { default as CommonButton } from './component';
+export { default as BBButton } from './component';

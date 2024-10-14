@@ -1,30 +1,42 @@
-// StyledButton.tsx
 import React from 'react';
-import styled from 'styled-components';
+import { ButtonProps } from './type.js';
+import * as Styled from './styles';
 
-// Define a styled button
-const StyledButton = styled.button`
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  
-  &:hover {
-    background-color: #0056b3;
-  }
-`;
-
-// Define the props for the Button component
-interface ButtonProps {
-  children: React.ReactNode; // Content inside the button
-  onClick?: (event: React.MouseEventHandler<HTMLButtonElement>) => void; // Optional click handler
-}
-
-// Button component
-function Button({ children, onClick = () => {} }: ButtonProps) {
-  return <StyledButton onClick={onClick}>{children}</StyledButton>;
+/**
+ * Customizable button component.
+ *
+ * This component renders a button that matches the style of BBB and can trigger actions in
+ * the user interface, with accessible properties to enhance usability.
+ *
+ * @param {string} [label] - The text to display inside the button.
+ * @param {string} [ariaLabel=''] - Accessible label for the button.
+ * @param {string} [ariaLabelledBy=''] - ID of another element providing an accessible label.
+ * @param {string} [ariaDescribedBy=''] - ID of another element describing the button for
+ *  additional information.
+ * @param {function} onClick - Function to be called when the button is clicked.
+ * @param {React.ReactNode} [children] - Child elements to render inside the button.
+ *
+ * @returns {JSX.Element} The rendered Button component.
+ */
+function Button({
+  label,
+  ariaLabel = '',
+  ariaLabelledBy = '',
+  ariaDescribedBy = '',
+  onClick,
+  children
+}: ButtonProps): JSX.Element {
+  return (
+    <Styled.Button
+      onClick={onClick}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
+      aria-describedby={ariaDescribedBy}
+    >
+      {label && <span>{label}</span>}
+      {children}
+    </Styled.Button>
+  );
 };
 
 export default Button;
