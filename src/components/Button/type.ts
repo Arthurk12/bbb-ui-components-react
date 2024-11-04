@@ -1,4 +1,4 @@
-import { COLORS } from "./constants";
+import { COLORS, SIZES } from "./constants";
 
 export type ColorProperties = {
   color: string;
@@ -15,10 +15,20 @@ export type ColorProperties = {
   focusBrightness: string;
   focusBoxShadowColor: string;
 }
-
 export type CSSColorPropertiesType = Record<string, ColorProperties>;
-
 type ColorType = typeof COLORS[number];
+
+export type SizeProperties = {
+  padding: string;
+  fontSize: string;
+}
+export type CSSSizePropertiesType = Record<string, SizeProperties>;
+type SizeType = typeof SIZES[number];
+
+export interface StyledButtonProps {
+  color?: ColorType;
+  size?: SizeType;
+}
 
 export interface ButtonProps {
   label: string;
@@ -27,5 +37,6 @@ export interface ButtonProps {
   ariaDescribedBy?: string;
   ariaLabel?: string;
   color?: ColorType;
+  size?: SizeType;
   children: React.ReactNode;
 }

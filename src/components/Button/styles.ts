@@ -1,9 +1,17 @@
 import styled from 'styled-components';
-import { borderSize, borderSizeLarge, mdPaddingY, mdPaddingX } from '../../stylesheets/general';
+import {
+  borderSize,
+  borderSizeLarge,
+  smPaddingX, smPaddingY,
+  mdPaddingX,mdPaddingY,
+  lgPaddingX, lgPaddingY,
+  jumboPaddingX, jumboPaddingY,
+} from '../../stylesheets/general';
 import { CSS_COLOR_PROPERTIES } from './constants';
-import { btnFontWeight, fontSizeBase } from '../../stylesheets/typography';
+import { btnFontWeight, fontSizeSmall, fontSizeBase, fontSizeLarge } from '../../stylesheets/typography';
+import { CSSSizePropertiesType, StyledButtonProps } from './type';
 
-export const Button = styled.button`
+export const Button = styled.button<StyledButtonProps>`
   border: ${borderSizeLarge} solid transparent;
   overflow: visible;
   display: inline-block;
@@ -40,6 +48,22 @@ export const Button = styled.button`
   & > span:hover {
     opacity: 0.5;
   }
+  
+  ${({size}) => {
+    const sizes: CSSSizePropertiesType = {
+      'sm': { fontSize: `calc(${fontSizeSmall} * 0.85)`, padding: `${smPaddingY} ${smPaddingX}` },
+      'md': { fontSize: `calc(${fontSizeBase} * 0.85)`, padding: `${mdPaddingY} ${mdPaddingX}` },
+      'lg': { fontSize: `calc(${fontSizeLarge} * 0.85)`, padding: `${lgPaddingY} ${lgPaddingX}` },
+      'jumbo': { fontSize: '3rem', padding: `${jumboPaddingY} ${jumboPaddingX}` }
+    };
+    return sizes[size] ? `
+      font-size: ${sizes[size].fontSize};
+      padding: ${sizes[size].padding};
+    ` : `
+      font-size: ${sizes['md'].fontSize};
+      padding: ${sizes['md'].padding};
+    `;
+  }}
 
   ${({color}) => color && `
     color: ${CSS_COLOR_PROPERTIES[color].color};

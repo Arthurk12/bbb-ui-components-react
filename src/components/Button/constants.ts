@@ -53,6 +53,7 @@ import {
 import { CSSColorPropertiesType } from "./type";
 
 const SIZES = ['jumbo', 'lg', 'md', 'sm'];
+const DEFAULT_SIZE = SIZES[2];
 const COLORS = ['default', 'primary', 'danger', 'warning', 'success', 'dark', 'light', 'offline', 'muted', 'secondary'];
 const DEFAULT_COLOR = COLORS[0];
 
@@ -211,6 +212,7 @@ const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
 
 export {
   SIZES,
+  DEFAULT_SIZE,
   COLORS,
   DEFAULT_COLOR,
   CSS_COLOR_PROPERTIES,

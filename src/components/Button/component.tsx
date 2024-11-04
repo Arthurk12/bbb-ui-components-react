@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonProps } from './type';
-import { COLORS, DEFAULT_COLOR } from './constants';
+import { COLORS, DEFAULT_COLOR, DEFAULT_SIZE, SIZES } from './constants';
 import * as Styled from './styles';
 
 /**
@@ -16,6 +16,8 @@ import * as Styled from './styles';
  *  additional information.
  * @param {'default' | 'primary' | 'danger' | 'warning' | 'success' | 'dark' | 'light' | 'offline' | 'muted' | 'secondary'} [color='default']
  * - Defines the color scheme for the button.
+ * @param {'jumbo' | 'lg' | 'md' | 'sm' } [size='md']
+ * - Defines the size of the button.
  * @param {function} onClick - Function to be called when the button is clicked.
  * @param {React.ReactNode} [children] - Child elements to render inside the button.
  *
@@ -27,6 +29,7 @@ function Button({
   ariaLabelledBy = '',
   ariaDescribedBy = '',
   color = DEFAULT_COLOR,
+  size = DEFAULT_SIZE,
   onClick,
   children
 }: ButtonProps): JSX.Element {
@@ -35,6 +38,11 @@ function Button({
     //TODO: INVALID COLOR - log error?
     _color = DEFAULT_COLOR;
   };
+  let _size = size;
+  if (!SIZES.includes(size)) {
+    //TODO: INVALID SIZE - log error?
+    _size = DEFAULT_SIZE;
+  }
 
   return (
     <Styled.Button
@@ -43,6 +51,7 @@ function Button({
       aria-labelledby={ariaLabelledBy}
       aria-describedby={ariaDescribedBy}
       color={_color}
+      size={_size}
     >
       {label && <span>{label}</span>}
       {children}

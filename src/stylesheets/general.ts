@@ -1,5 +1,11 @@
 export const borderSizeSmall = '1px';
 export const borderSize = '2px';
 export const borderSizeLarge = '3px';
+export const smPaddingX = '.75rem';
+export const smPaddingY = '.3rem';
 export const mdPaddingY = '.45rem';
 export const mdPaddingX = '1rem';
+export const lgPaddingX = '1.25rem';
+export const lgPaddingY = '0.6rem';
+export const jumboPaddingY = '1.5rem';
+export const jumboPaddingX = '3.025rem';
