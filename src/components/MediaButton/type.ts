@@ -36,7 +36,6 @@ export interface StyledButtonProps {
   variant?: VariantType;
   color?: ColorType;
   size?: SizeType;
-  squared: boolean;
   disabled: boolean;
 }
 
@@ -52,9 +51,10 @@ export interface ButtonProps {
   color?: ColorType;
   variant?: VariantType;
   size?: SizeType;
-  squared?: boolean;
   disabled?: boolean;
-  iconStart?: React.ReactNode;
-  iconEnd?: React.ReactNode;
+  icon?: React.ReactNode;
+  auxIcon?: React.ReactNode;
+  hideAuxIcon?: boolean;
+  auxOnClick?: React.MouseEventHandler<HTMLDivElement>;
   children?: React.ReactNode;
 }

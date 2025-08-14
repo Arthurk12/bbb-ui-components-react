@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdSettings } from 'react-icons/md';
 import { ButtonProps } from './type';
 import {
   DEFAULT_VARIANT,
@@ -8,9 +9,10 @@ import {
 import * as Styled from './styles';
 
 /**
- * Button component.
+ * Shortcut Button component.
  *
- * This component renders a button that matches the style of BBB and can trigger actions in
+ * This component renders a squared button with an icon on the center and optionally
+ * an auxiliary icon at the top that matches the style of BBB and can trigger actions in
  * the user interface, with accessible properties to enhance usability.
  *
  * @param {string} [id=''] - Unique identifier for the button.
@@ -28,14 +30,14 @@ import * as Styled from './styles';
  * - Defines the visual style of the button.
  * @param {import('./type').ButtonProps['size']} [size='md']
  * - Defines the size of the button.
- * @param {React.ReactNode} [iconStart] - Icon to display at the start of the button.
+ * @param {React.ReactNode} [icon] - Icon to display at the middle of the button.
  * @param {React.ReactNode} [iconEnd] - Icon to display at the end of the button.
  * @param {boolean} [disabled=false] - If true, the button will be disabled and not clickable.
  * @param {React.ReactNode} [children] - Child elements to render inside the button.
  *
  * @returns {JSX.Element} The rendered Button component.
  */
-function Button({
+function SquaredButton({
   id='',
   dataTest = '',
   label,
@@ -47,11 +49,11 @@ function Button({
   color = DEFAULT_COLOR,
   variant = DEFAULT_VARIANT,
   size = DEFAULT_SIZE,
-  squared = false,
-  iconStart = null,
-  iconEnd = null,
+  icon = null,
+  auxIcon = <MdSettings fontSize="small" />,
+  hideAuxIcon = false,
+  auxOnClick,
   disabled = false,
-  children,
 }: ButtonProps): JSX.Element {
   const accessibilityProps: {
     'aria-label'?: string;
@@ -62,27 +64,42 @@ function Button({
   if (ariaLabelledBy) accessibilityProps['aria-labelledby'] = ariaLabelledBy;
   if (ariaDescribedBy) accessibilityProps['aria-describedby'] = ariaDescribedBy;
   
-  const testId = dataTest || `button-${id || label || 'default'}`;
+  const testId = dataTest || `squared-button-${id || label || 'default'}`;
   
   return (
-    <Styled.Button
-      id={id}
-      data-test={testId}
-      onClick={onClick}
-      onKeyDown={onKeyDown}
-      {...accessibilityProps}
-      color={color}
-      variant={variant}
-      size={size}
-      squared={squared}
-      disabled={disabled}
-    >
-      {iconStart && iconStart}
-      {label && <span>{label}</span>}
-      {children}
-      {iconEnd && iconEnd}
-    </Styled.Button>
+    <Styled.SquaredButtonContainer data-test={testId} >
+      <Styled.ButtonFrame
+        color={color}
+        variant={variant}
+        size={size}
+        disabled={disabled}
+        onClick={onClick}
+        onKeyDown={onKeyDown}
+      >
+        {!hideAuxIcon && (
+          <Styled.AuxIconContainer
+            role="button"
+            onClick={(event) => {
+              if (auxOnClick) {
+                auxOnClick(event);
+                event.preventDefault();
+              }
+            }}
+          >
+            <div>
+              {auxIcon}
+            </div>
+          </Styled.AuxIconContainer>
+        )}
+        {icon && (
+          <Styled.IconWrapper>
+            {icon}
+          </Styled.IconWrapper>
+        )}
+      </Styled.ButtonFrame>
+      <Styled.ButtonText>{label}</Styled.ButtonText>
+    </Styled.SquaredButtonContainer>
   );
 };
 
-export default Button;
+export default SquaredButton;

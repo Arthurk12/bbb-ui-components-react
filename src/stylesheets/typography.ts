@@ -1,5 +1,4 @@
-export const btnFontWeight = '600';
-export const fontSizeBase = '1rem';
-export const fontSizeSmall = '0.875rem';
-export const fontSizeSmaller = '.75rem';
-export const fontSizeLarge = '1.25rem';
+export const fontSizeXSmall = '0.75rem'; //12px
+export const fontSizeSmall = '0.875rem'; //14px
+export const fontSizeDefault = '1rem';  //16px
+export const fontSizeBig = '1.125rem';  //18px

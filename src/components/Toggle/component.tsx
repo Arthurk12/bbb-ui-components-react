@@ -1,6 +1,6 @@
 import React from 'react';
-import { default as ReactToggle } from 'react-toggle';
 import { ToggleProps } from './types';
+import * as Styled from './styles';
 
 /**
  * Toggle component for switching states.
@@ -15,8 +15,7 @@ import { ToggleProps } from './types';
  */
 function Toggle ({ icons = false, ...toggleProps}: ToggleProps): JSX.Element {
   return (
-    <ReactToggle
-      icons={icons}
+    <Styled.MaterialToggle
       {...toggleProps}
     />
   );

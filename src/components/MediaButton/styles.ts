@@ -10,22 +10,18 @@ import {
 } from './constants';
 import { StyledButtonProps } from './type';
 import { borderRadiusDefault, spacingSmall } from '../../stylesheets/sizing';
+import { colorBorderDefault, colorTextDefault } from '../../stylesheets/pallete';
+import { fontSizeXSmall } from '../../stylesheets/typography';
 
-export const Button = styled.button<StyledButtonProps>`
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+export const SquaredButtonContainer = styled.div`
+  width: 5rem;
+  display: flex;
+  flex-direction: column;
   gap: ${spacingSmall};
-  border-radius: ${borderRadiusDefault};
+  align-items: center;
+`;
 
-  cursor: pointer;
-  user-select: none;
-
-  font-weight: 600;
-  line-height: normal;
-  text-align: center;
-  white-space: nowrap;
-
+const ButtonStyles = css<StyledButtonProps>`
   ${({size}) => {
     return CSS_SIZE_PROPERTIES[size] ? `
       padding: ${CSS_SIZE_PROPERTIES[size].padding};
@@ -80,9 +76,6 @@ export const Button = styled.button<StyledButtonProps>`
     return css`
       pointer-events: none;
       cursor: not-allowed;
-      & span {
-        color: ${color};
-      }
       color: ${color};
       ${background ? `background-color: ${background}` : `background-color: none`};
       border: ${border ? `1px solid ${border}` : 'none'};
@@ -96,4 +89,59 @@ export const Button = styled.button<StyledButtonProps>`
       }
     `;
   }}
+`;
+
+export const ButtonFrame = styled.button<StyledButtonProps>`
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: ${borderRadiusDefault} !important;
+  border: 1px solid ${colorBorderDefault} !important;
+  padding: ${spacingSmall} !important;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: none;
+  position: relative;
+  transition: opacity 0.2s ease-in-out;
+
+  cursor: pointer;
+
+  ${ButtonStyles}
+`;
+
+export const AuxIconContainer = styled.div`
+  border-radius: 50%;
+  padding: 0.2rem;
+  position: absolute;
+  top: 0.1rem;
+  right: 0.1rem;
+  & svg {
+    font-size: 1.25rem;
+  }
+`;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+
+  > i {
+    font-size: 2rem;
+  }
+`;
+
+export const ButtonText = styled.div`
+  color: ${colorTextDefault};
+  font-size: ${fontSizeXSmall}
+  width: 100%;
+  text-align: center;
+  line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 `;
