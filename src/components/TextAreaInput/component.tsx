@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, JSX } from 'react';
 import { TextAreaInputProps } from './types';
 import * as Styled from './styles';
 

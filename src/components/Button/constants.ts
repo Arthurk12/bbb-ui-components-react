@@ -39,6 +39,23 @@ const SIZES = {
 const SIZE_VALUES = Object.values(SIZES);
 const DEFAULT_SIZE = SIZE_VALUES[0];
 
+const LAYOUTS = {
+  DEFAULT: 'default',
+  STACKED: 'stacked',
+  CIRCLE: 'circle',
+} as const;
+const LAYOUT_VALUES = Object.values(LAYOUTS);
+const DEFAULT_LAYOUT = LAYOUT_VALUES[0];
+
+const TOOLTIP_PLACEMENTS = {
+  TOP: 'top',
+  BOTTOM: 'bottom',
+  LEFT: 'left',
+  RIGHT: 'right',
+} as const;
+const TOOLTIP_PLACEMENT_VALUES = Object.values(TOOLTIP_PLACEMENTS);
+const DEFAULT_TOOLTIP_PLACEMENT = TOOLTIP_PLACEMENTS.TOP;
+
 const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
   primary: {
     default: {
@@ -48,6 +65,7 @@ const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
       hoverColor: colorWhite,
       hoverBackground: colorHoverDark,
       hoverBorder: false,
+      outline: colorBrand1,
     },
     danger: {
       color: colorWhite,
@@ -56,6 +74,7 @@ const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
       hoverColor: colorWhite,
       hoverBackground: colorErrorDark,
       hoverBorder:colorBorderError,
+      outline: colorError,
     },
   },
   secondary: {
@@ -66,6 +85,7 @@ const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
       hoverColor: colorHoverDark,
       hoverBackground: colorBackgroundWhite,
       hoverBorder: colorHoverDark,
+      outline: colorBrand1,
     },
     danger: {
       color: colorError,
@@ -74,6 +94,7 @@ const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
       hoverColor: colorErrorDark,
       hoverBackground: colorBackgroundWhite,
       hoverBorder: colorErrorDark,
+      outline: colorError,
     },
   },
   tertiary: {
@@ -84,6 +105,7 @@ const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
       hoverColor: colorHoverDark,
       hoverBackground: colorHoverLight,
       hoverBorder: false,
+      outline: colorBrand1,
     },
     // TODO: Button variant tertiary in danger color is not yet
     // defined. I put some bogus values here just to satisfy TypeScript
@@ -94,6 +116,7 @@ const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
       hoverColor: colorWhite,
       hoverBackground: colorError,
       hoverBorder: false, 
+      outline: colorErrorDark,
     },
   },
   subtle: {
@@ -105,6 +128,7 @@ const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
       hoverColor: colorTextLight,
       hoverBackground: colorLightGray,
       hoverBorder: false,
+      outline: colorIconDefault,
     },
     danger: {
       color: colorError,
@@ -113,6 +137,7 @@ const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
       hoverColor: colorErrorDark,
       hoverBackground: colorLightGray,
       hoverBorder: false,
+      outline: colorError,
     },
   },
 };
@@ -122,6 +147,7 @@ const CSS_COLOR_PROPERTIES_DISABLED: EssentialColorProperties = {
   color: colorNeutral3,
   background: colorBackgroundLight,
   border: false,
+  outline: colorNeutral3,
 }
 
 const CSS_SIZE_PROPERTIES: CSSSizePropertiesType = {
@@ -137,10 +163,18 @@ export {
   VARIANTS,
   VARIANT_VALUES,
   DEFAULT_VARIANT,
+  COLORS,
   COLOR_VALUES,
   DEFAULT_COLOR,
+  SIZES,
   SIZE_VALUES,
   DEFAULT_SIZE,
+  LAYOUTS,
+  LAYOUT_VALUES,
+  DEFAULT_LAYOUT,
+  TOOLTIP_PLACEMENTS,
+  TOOLTIP_PLACEMENT_VALUES,
+  DEFAULT_TOOLTIP_PLACEMENT,
   CSS_COLOR_PROPERTIES,
   CSS_COLOR_PROPERTIES_DISABLED,
   CSS_SIZE_PROPERTIES,

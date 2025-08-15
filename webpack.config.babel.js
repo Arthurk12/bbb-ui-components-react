@@ -7,8 +7,9 @@ export default {
     filename: 'index.ts',
     library: {
       name: 'BBBUiComponentsReact',
-      type: 'umd', 
+      type: 'umd',
     },
+    globalObject: 'this',
   },
   externals: {
     react: 'react',
@@ -16,7 +17,7 @@ export default {
     'styled-components': 'styled-components',
   },
   resolve: {
-    extensions: ['.js', '.ts', '.tsx', '.json'],
+    extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
     fallback: {
       fs: false,
       net: false,
@@ -26,17 +27,14 @@ export default {
   module: {
     rules: [
       {
-        test: /\.(js|jsx|ts)$/,
+        test: /\.tsx?$/,
+        use: 'ts-loader',
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
       },
-			{
-				test: /\.tsx?$/,
-				use: 'ts-loader',
-				exclude: /node_modules/,
-			},
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
 };
