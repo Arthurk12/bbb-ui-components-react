@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { borderRadiusSmall, spacingMedium, spacingSmall } from '../../stylesheets/sizing';
 import Select from '@mui/material/Select';
-import { colorBorderDefault, colorBrand1, colorDarkGrey } from '../../stylesheets/pallete';
+import { colorBorderDefault, colorBrand1, colorDarkGray } from '../../stylesheets/pallete';
 import { fontSizeSmall } from '../../stylesheets/typography';
 
 export const SelectContainer = styled.div`
@@ -33,7 +33,7 @@ export const Selector = styled(Select)`
 
 export const Title = styled.label`
   align-self: flex-start;
-  color: ${colorDarkGrey};
+  color: ${colorDarkGray};
   font-size: ${fontSizeSmall};
   font-style: normal;
   font-weight: 400;

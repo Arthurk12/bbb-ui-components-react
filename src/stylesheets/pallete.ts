@@ -3,8 +3,9 @@ export const colorNeutral2 = 'var(--color-neutral-2, #717C91)';
 export const colorNeutral3 = 'var(--color-neutral-3, #B0BDC9)';
 export const colorNeutral4 = 'var(--color-neutral-4, #DCE4EC)';
 export const colorWhite = 'var(--color-neutral-white, #FFFFFF)';
-export const colorLightGray = 'var(--color-light-grey, #F4F6FA)';
-export const colorDarkGrey = 'var(--color-dark-grey, #393C48)';
+export const colorLightGray = 'var(--color-light-gray, #F4F6FA)';
+export const colorGray = 'var(--color-gray, #4E5A66)';
+export const colorDarkGray = 'var(--color-dark-gray, #393C48)';
 
 // Brand colors
 export const colorBrand1 = 'var(--color-brand-1, #1D65D4)';
@@ -30,7 +31,7 @@ export const colorBorderSelected = `var(--color-border-selected, ${colorBrand1})
 export const colorBorderError = `var(--color-border-error, ${colorError})`;
 
 // Text colors
-export const colorTextDefault = `var(--color-text-default, ${colorDarkGrey})`;
+export const colorTextDefault = `var(--color-text-default, ${colorDarkGray})`;
 export const colorTextLight = `var(--color-text-light, ${colorNeutral2})`;
 
 //Icon colors

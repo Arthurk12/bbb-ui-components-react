@@ -12,6 +12,8 @@ import {
   colorBorderSelected,
   colorTextLight,
   colorIconDefault,
+  colorGray,
+  colorBrandAux,
 } from '../../stylesheets/pallete';
 import { spacingMedium, spacingSmall, spacingSmallMedium } from '../../stylesheets/sizing';
 import { CSSColorPropertiesType, CSSSizePropertiesType, EssentialColorProperties } from './type';
@@ -28,6 +30,7 @@ const DEFAULT_VARIANT = VARIANT_VALUES[0];
 const COLORS = {
   DEFAULT: 'default',
   DANGER: 'danger',
+  NEUTRAL: 'neutral',
 } as const;
 const COLOR_VALUES = Object.values(COLORS);
 const DEFAULT_COLOR = COLOR_VALUES[0];
@@ -76,6 +79,15 @@ const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
       hoverBorder:colorBorderError,
       outline: colorError,
     },
+    neutral: {
+      color: colorGray,
+      background: colorWhite,
+      border: false,
+      hoverColor: colorGray,
+      hoverBackground: colorBrandAux,
+      hoverBorder: false,
+      outline: colorBrand1,
+    },
   },
   secondary: {
     default: {
@@ -95,6 +107,15 @@ const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
       hoverBackground: colorBackgroundWhite,
       hoverBorder: colorErrorDark,
       outline: colorError,
+    },
+    neutral: {
+      color: colorGray,
+      background: colorWhite,
+      border: false,
+      hoverColor: colorGray,
+      hoverBackground: colorBrandAux,
+      hoverBorder: false,
+      outline: colorBrand1,
     },
   },
   tertiary: {
@@ -118,6 +139,15 @@ const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
       hoverBorder: false, 
       outline: colorErrorDark,
     },
+    neutral: {
+      color: colorGray,
+      background: colorWhite,
+      border: false,
+      hoverColor: colorGray,
+      hoverBackground: colorBrandAux,
+      hoverBorder: false,
+      outline: colorBrand1,
+    },
   },
   subtle: {
     default: {
@@ -138,6 +168,15 @@ const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
       hoverBackground: colorLightGray,
       hoverBorder: false,
       outline: colorError,
+    },
+    neutral: {
+      color: colorGray,
+      background: colorWhite,
+      border: false,
+      hoverColor: colorGray,
+      hoverBackground: colorBrandAux,
+      hoverBorder: false,
+      outline: colorBrand1,
     },
   },
 };
