@@ -2,8 +2,6 @@
 
 This repository contains a library of reusable React components extracted from the main [**BigBlueButton (BBB)**](https://github.com/bigbluebutton/bigbluebutton) project. These components provide a consistent and customizable interface that can be reused in other projects, allowing them to easily adopt the BBB visual identity.
 
-![Demo](assets/common-components.png)
-
 ## Installation
 
 This library is under active development and has not yet been published on npm. For now, you can clone the repository and install it locally.
