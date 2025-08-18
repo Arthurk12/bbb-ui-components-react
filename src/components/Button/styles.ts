@@ -10,7 +10,7 @@ import {
   LAYOUTS,
 } from './constants';
 import {
-  StyledAuxIconContainer, StyledButtonProps,
+  StyledhelperIconContainer, StyledButtonProps,
   StyledButtonWrapperProps,
 } from './type';
 import {
@@ -122,6 +122,7 @@ const circleLayoutStyles = css`
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
+  aspect-ratio: 1;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -161,7 +162,7 @@ export const Button = styled.button<StyledButtonProps>`
   }}
 `;
 
-export const AuxIconContainer = styled.div<StyledAuxIconContainer>`
+export const helperIconContainer = styled.div<StyledhelperIconContainer>`
   ${({ hover, variant, color }) => hover && `
     &&:hover,
     &&:active,
@@ -181,7 +182,7 @@ export const AuxIconContainer = styled.div<StyledAuxIconContainer>`
   }
 `;
 
-export const AuxIcon = styled.div`
+export const helperIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

@@ -42,7 +42,7 @@ type SizeType = typeof SIZE_VALUES[number];
 type LayoutType = typeof LAYOUT_VALUES[number];
 type TooltipPlacementType = typeof TOOLTIP_PLACEMENT_VALUES[number];
 
-export interface StyledAuxIconContainer {
+export interface StyledhelperIconContainer {
   hover: boolean;
   variant: VariantType;
   color: ColorType;
@@ -87,9 +87,9 @@ type DefaultLayoutProps = BaseButtonProps & {
 type StackedLayoutProps = BaseButtonProps & {
   layout: typeof LAYOUTS.STACKED;
   icon?: React.ReactNode;
-  auxIcon?: React.ReactNode;
-  hideAuxIcon?: boolean;
-  auxOnClick?: React.MouseEventHandler<HTMLDivElement>;
+  helperIcon?: React.ReactNode;
+  hideHelperIcon?: boolean;
+  helperOnClick?: React.MouseEventHandler<HTMLDivElement>;
 };
 
 type CircleLayoutProps = BaseButtonProps & {

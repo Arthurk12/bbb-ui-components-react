@@ -1,23 +1,59 @@
-import React, { JSX } from 'react';
+import React, { JSX, useId } from 'react';
 import { ToggleProps } from './types';
 import * as Styled from './styles';
+import { DEFAULT_TEXT_POSITION, TEXT_POSITIONS } from './constants';
 
 /**
- * Toggle component for switching states.
+ * A customizable Toggle switch component.
  *
- * This component wraps a ReactToggle from BBB and matches its style.
- * Icons are hidden by default.
+ * This component provides a flexible toggle switch that can be used for binary state changes.
+ * It supports labels (label and helperText) and various textPosition configurations.
  *
- * @param {boolean} [icons=false] - Determines whether to display icons(default is false to match BBB style).
- * @param {...Object} toggleProps - Additional properties to pass to the ReactToggle component.
- * 
+ * @param {ToggleProps} props - The props for the Toggle component. See {@link ToggleProps} for more details.
+ * @param {string} [props.label] - The main label text displayed next to the toggle.
+ * @param {string} [props.helperText] - The helperText text displayed below the label.
+ * @param {keyof typeof import('./constants')['TEXT_POSITIONS']} [props.textPosition=import('./constants').DEFAULT_TEXT_POSITION] - The position of the text labels relative to the toggle switch.
+ * @param {string} [props.ariaLabel] - The accessible name for the toggle.
+ * @param {string} [props.ariaLabelledBy] - The ID of the element that labels the toggle.
+ * @param {string} [props.ariaDescribedBy] - The ID of the element that describes the toggle.
+ * @param {boolean} [props.disabled=false] - If `true`, the toggle will be disabled and unresponsive.
+ * @param {(event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => void} [props.onChange] - Callback function that is fired when the toggle state changes.
+ * @param {any} ...toggleProps - Any other props will be passed down to the underlying Material-UI Switch component.
  * @returns {JSX.Element} The rendered Toggle component.
  */
-function Toggle ({ icons = false, ...toggleProps}: ToggleProps): JSX.Element {
+function Toggle ({
+  label,
+  helperText,
+  textPosition =  DEFAULT_TEXT_POSITION, 
+  onChange,
+  ariaLabel,
+  ariaLabelledBy,
+  ariaDescribedBy,
+  ...toggleProps
+}: ToggleProps): JSX.Element {
+  const id = useId();
+  const labelId = label ? `${id}-label` : undefined;
+  const helperTextId = helperText ? `${id}-helper` : undefined;
+
   return (
-    <Styled.MaterialToggle
-      {...toggleProps}
-    />
+    <Styled.ToggleWrapper textPosition={textPosition}>
+      {(label || helperText) && (
+        <Styled.TextWrapper textPosition={textPosition} htmlFor={id} hasLabel={!!label}>
+          {label && <Styled.Title id={labelId}>{label}</Styled.Title>}
+          {helperText && <Styled.HelperText id={helperTextId}>{helperText}</Styled.HelperText>}
+        </Styled.TextWrapper>
+      )}
+      <Styled.ToggleSwitchWrapper>
+        <Styled.MaterialToggle
+          id={id}
+          onChange={onChange}
+          aria-label={ariaLabel}
+          aria-labelledby={ariaLabel ? undefined : ariaLabelledBy || labelId}
+          aria-describedby={ariaDescribedBy || helperTextId}
+          {...toggleProps}
+        />
+      </Styled.ToggleSwitchWrapper>
+    </Styled.ToggleWrapper>
   );
 }
 

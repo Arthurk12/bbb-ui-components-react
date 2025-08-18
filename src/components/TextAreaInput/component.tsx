@@ -3,19 +3,20 @@ import { TextAreaInputProps } from './types';
 import * as Styled from './styles';
 
 /**
- * TextAreaInput component for user input.
+ * A customizable text area input component.
  *
- * This component provides a styled textarea for user input, 
- * adhering to the design principles of BBB.
+ * This component provides a styled, multi-line text input field that automatically
+ * focuses on render and supports all standard textarea attributes.
  *
- * @param {string} [value] - The current value of the textarea.
- * @param {function} onChange - Function to handle changes to the textarea value.
- * @param {string} [placeholder] - Placeholder text displayed when the textarea is empty.
- * @param {string} [ariaLabel=''] - Accessible label for the textarea.
- * @param {string} [ariaLabelledBy=''] - ID of another element providing an accessible label.
- * @param {string} [ariaDescribedBy=''] - ID of another element describing the textarea for additional information.
- * @param {...Object} textAreaProps - Additional properties to pass to the textarea element.
- *
+ * @param {TextAreaInputProps} props The props for the TextAreaInput component. See {@link TextAreaInputProps} for more details.
+ * @param {string} [props.placeholder=''] The placeholder text to be displayed when the textarea is empty.
+ * @param {number} [props.rows=1] The initial number of visible text lines.
+ * @param {number} [props.maxLength=250] The maximum number of characters allowed in the textarea.
+ * @param {boolean} [props.autoFocus=true] If `true`, the textarea will be focused on mount.
+ * @param {React.Ref<HTMLTextAreaElement>} [props.inputRef] A ref to be forwarded to the underlying textarea element.
+ * @param {(event: React.ChangeEvent<HTMLTextAreaElement>) => void} [props.onChange] Callback fired when the value is changed.
+ * @param {(event: React.KeyboardEvent<HTMLTextAreaElement>) => void} [props.onKeyDown] Callback fired when a key is pressed.
+ * @param {any} ...props Any other props will be passed down to the underlying textarea element.
  * @returns {JSX.Element} The rendered TextAreaInput component.
  */
 function TextAreaInput({
