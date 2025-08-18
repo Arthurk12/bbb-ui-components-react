@@ -2,6 +2,8 @@
 
 The `BBBDivider` component is a simple horizontal line used to separate content.
 
+![Demo](assets/example.png)
+
 ## Usage Example
 
 ```jsx
