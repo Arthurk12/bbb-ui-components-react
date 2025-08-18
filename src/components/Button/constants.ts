@@ -153,7 +153,7 @@ const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
     default: {
       color: colorTextLight,
       iconColor: colorIconDefault,
-      background: false,
+      background: 'transparent',
       border: false,
       hoverColor: colorTextLight,
       hoverBackground: colorLightGray,
