@@ -1,6 +1,6 @@
-# BBHint
+# BBBHint
 
-The `BBHint` component is used to display informational messages to the user. It can be used to show tips, warnings, or other important information.
+The `BBBHint` component is used to display informational messages to the user. It can be used to show tips, warnings, or other important information.
 
 ![Demo](assets/example.png)
 
@@ -9,17 +9,17 @@ The `BBHint` component is used to display informational messages to the user. It
 ### Basic Hint
 
 ```jsx
-import { BBHint } from 'bbb-ui-components';
+import { BBBHint } from 'bbb-ui-components-react';
 
-<BBHint label="This is a simple hint." />
+<BBBHint label="This is a simple hint." />
 ```
 
 ### Hint with Title and Close Button
 
 ```jsx
-import { BBHint } from 'bbb-ui-components';
+import { BBBHint } from 'bbb-ui-components-react';
 
-<BBHint
+<BBBHint
   title="Information"
   label="This hint has a title and a close button."
   onRequestClose={() => alert('Hint closed!')}

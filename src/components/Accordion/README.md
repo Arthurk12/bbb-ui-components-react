@@ -1,6 +1,6 @@
-# BBAccordion
+# BBBAccordion
 
-The `BBAccordion` component allows you to create collapsible sections of content. It's useful for showing and hiding information in a compact way.
+The `BBBAccordion` component allows you to create collapsible sections of content. It's useful for showing and hiding information in a compact way.
 
 ![Demo](assets/example.gif)
 
@@ -9,33 +9,33 @@ The `BBAccordion` component allows you to create collapsible sections of content
 ### Basic Accordion
 
 ```jsx
-import { BBAccordion } from 'bbb-ui-components-react';
+import { BBBAccordion } from 'bbb-ui-components-react';
 
-<BBAccordion title="Click to expand">
+<BBBAccordion title="Click to expand">
   <p>This is the content of the accordion.</p>
   <p>It can contain any React nodes.</p>
-</BBAccordion>
+</BBBAccordion>
 ```
 
 ### Accordion with Tooltip
 
 ```jsx
-import { BBAccordion } from 'bbb-ui-components';
+import { BBBAccordion } from 'bbb-ui-components-react';
 
-<BBAccordion title="Hover for tooltip" tooltipLabel="This is a helpful tooltip!">
+<BBBAccordion title="Hover for tooltip" tooltipLabel="This is a helpful tooltip!">
   <p>Content for the accordion with a tooltip.</p>
-</BBAccordion>
+</BBBAccordion>
 ```
 
 ### Accordion with custom button header
 
 ```jsx
-import { BBAccordion } from 'bbb-ui-components';
-import { MdFavorite } from "react-icons/md";
+import { BBBAccordion } from 'bbb-ui-components-react';
+import { MdFavorite } from 'react-icons/md';
 
-<BBAccordion title="Hover for tooltip" tooltipLabel="This is a helpful tooltip!" buttonHeader={<MdFavorite>}>
+<BBBAccordion title="Hover for tooltip" tooltipLabel="This is a helpful tooltip!" buttonHeader={<MdFavorite>}>
   <p>Content for the accordion with a tooltip.</p>
-</BBAccordion>
+</BBBAccordion>
 ```
 
 ## Props
