@@ -1,7 +1,7 @@
 import React, { JSX, useId } from 'react';
 import { ToggleProps } from './types';
 import * as Styled from './styles';
-import { DEFAULT_TEXT_POSITION, TEXT_POSITIONS } from './constants';
+import { DEFAULT_TEXT_POSITION } from './constants';
 
 /**
  * A customizable Toggle switch component.

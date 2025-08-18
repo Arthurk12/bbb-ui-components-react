@@ -21,5 +21,5 @@ export interface ToggleProps {
   ariaLabel?: string;
   ariaLabelledBy?: string;
   ariaDescribedBy?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 };

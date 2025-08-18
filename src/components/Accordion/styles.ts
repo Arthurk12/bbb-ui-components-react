@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorBackgroundLight, colorBrand1, colorTextDefault, colorTextLight, colorWhite } from '../../stylesheets/pallete';
+import { colorBackgroundLight, colorBrand1, colorTextDefault, colorWhite } from '../../stylesheets/pallete';
 import { fontSizeDefault } from '../../stylesheets/typography';
 import { borderRadiusDefault, spacingMedium, spacingSmall } from '../../stylesheets/sizing';
 import { StyledAccordionContent, StyledExpandIcon } from './types';

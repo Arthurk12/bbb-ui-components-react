@@ -25,8 +25,8 @@ function TextAreaInput({
   maxLength = 250,
   autoFocus = true,
   inputRef = undefined,
-  onChange = (event:  React.ChangeEvent<HTMLTextAreaElement>) => {},
-  onKeyDown = (event:  React.KeyboardEvent<HTMLTextAreaElement>) => {},
+  onChange,
+  onKeyDown,
   ...props
 }: TextAreaInputProps): JSX.Element {
   const internalRef = useRef<HTMLTextAreaElement | null>(null);
