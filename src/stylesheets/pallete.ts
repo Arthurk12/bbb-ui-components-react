@@ -8,17 +8,17 @@ export const colorGray = 'var(--color-gray, #4E5A66)';
 export const colorDarkGray = 'var(--color-dark-gray, #393C48)';
 
 // Brand colors
-export const colorBrand1 = 'var(--color-brand-1, #1D65D4)';
+const colorBrand1 = 'var(--color-brand-1, #1D65D4)';
 export const colorBrand2 = `var(--color-brand-2, ${colorBrand1})`;
 export const colorBrand3 = `var(--color-brand-3, ${colorBrand1})`;
-export const colorBrandLight = 'var(--color-brand-light, #E5EFFB)';
+const colorBrandLight = 'var(--color-brand-light, #E5EFFB)';
 export const colorBrandAux = `var(--color-brand-aux, ${colorBrandLight})`;
 
 // Semantic colors
-export const colorWarning = 'var(--color-warning, #F59240)';
 export const colorSuccess = 'var(--color-success, #2DD36F)';
-export const colorError = 'var(--color-error, #D6232D)';
-export const colorErrorDark = 'var(--color-error-dark, #B91C25)';
+export const colorWarning = 'var(--color-warning, #F59240)';
+const colorError = 'var(--color-error, #D6232D)';
+const colorErrorDark = 'var(--color-error-dark, #B91C25)';
 
 // Background colors
 export const colorBackgroundWhite = `var(--color-background-white, ${colorWhite})`;
@@ -26,7 +26,7 @@ export const colorBackgroundLight = `var(--color-background-light, ${colorLightG
 export const colorBackgroundBlue = `var(--color-background-blue, ${colorBrandLight})`;
 
 // Border colors
-export const colorBorderDefault = `var(--color-border-default, ${colorNeutral3})`;
+const colorBorderDefault = `var(--color-border-default, ${colorNeutral3})`;
 export const colorBorderSelected = `var(--color-border-selected, ${colorBrand1})`;
 export const colorBorderError = `var(--color-border-error, ${colorError})`;
 
@@ -43,3 +43,11 @@ export const colorIconWhite = `var(--color-icon-white, ${colorWhite})`;
 export const colorHoverDark = 'var(--color-hover-dark, #1E53AF)';
 export const colorHoverLight = 'var(--color-hover-light, #D4E5FA)';
 export const colorHoverNeutral = `var(--color-hover-neutral, ${colorNeutral4})`;
+
+export const palette = {
+  colorBrand1: `var(--color-primary, ${colorBrand1})`,
+  colorBrandLight: `var(--color-blue-aux, ${colorBrandLight})`,
+  colorError: `var(--color-danger, ${colorError})`,
+  colorErrorDark: `var(--color-danger-dark, ${colorErrorDark})`,
+  colorBorderDefault: `var(--default-border, ${colorBorderDefault})`,
+};
