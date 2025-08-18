@@ -38,7 +38,12 @@ function Toggle ({
   return (
     <Styled.ToggleWrapper textPosition={textPosition}>
       {(label || helperText) && (
-        <Styled.TextWrapper textPosition={textPosition} htmlFor={id} hasLabel={!!label}>
+        <Styled.TextWrapper
+          textPosition={textPosition}
+          htmlFor={id}
+          hasLabel={!!label}
+          hasHelperText={!!helperText}
+        >
           {label && <Styled.Title id={labelId}>{label}</Styled.Title>}
           {helperText && <Styled.HelperText id={helperTextId}>{helperText}</Styled.HelperText>}
         </Styled.TextWrapper>

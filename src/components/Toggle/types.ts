@@ -10,6 +10,7 @@ export interface StyledToggleWrapperProps {
 
 export interface StyledTextWrapperProps extends StyledToggleWrapperProps{
   hasLabel: boolean;
+  hasHelperText: boolean;
 }
 
 export interface ToggleProps {

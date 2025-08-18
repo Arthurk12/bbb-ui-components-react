@@ -47,7 +47,7 @@ export const TextWrapper = styled.label<StyledTextWrapperProps>`
     return 1;
   }};
   cursor: pointer;
-  ${({hasLabel}) => !hasLabel && `justify-content: center;`}
+  ${({hasLabel, hasHelperText}) => (!hasLabel || !hasHelperText) && `justify-content: center;`}
   ${({ textPosition }) => {
     if (textPosition === TEXT_POSITIONS.TOP || textPosition === TEXT_POSITIONS.BOTTOM) {
       return css`
