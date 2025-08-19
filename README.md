@@ -36,6 +36,7 @@ Below is a list of the components available in this library. Each component has 
 - [BBBCheckbox](./src/components/Checkbox/README.md)
 - [BBBDivider](./src/components/Divider/README.md)
 - [BBBHint](./src/components/Hint/README.md)
+- [BBBNavigation](./src/components/Navigation/README.md)
 - [BBBSelect](./src/components/Select/README.md)
 - [BBBTextAreaInput](./src/components/TextAreaInput/README.md)
 - [BBBTextInput](./src/components/TextInput/README.md)

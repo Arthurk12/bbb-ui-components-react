@@ -3,8 +3,9 @@ export * from './Button';
 export * from './Checkbox';
 export * from './Divider';
 export * from './Hint';
+export * from './Navigation';
 export * from './Select';
 export * from './TextAreaInput';
 export * from './TextInput';
 export * from './Toggle';
-export * from './Typography'
+export * from './Typography';
