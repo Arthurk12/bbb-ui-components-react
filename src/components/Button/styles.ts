@@ -66,6 +66,7 @@ const commonButtonStyles = css<StyledButtonProps>`
         ${hoverBorder ? `border: 1px solid ${hoverBorder};` : 'border: none;'}
       }
       &&:focus {
+        border: 1px solid transparent;
         outline: 2px solid ${outline};
       }
     `;

@@ -22,7 +22,7 @@ export const NavigationButton = styled.button`
 export const IconTextWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: ${spacingMedium};
 `;

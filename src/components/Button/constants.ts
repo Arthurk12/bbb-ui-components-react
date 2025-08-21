@@ -64,10 +64,10 @@ const CSS_COLOR_PROPERTIES: CSSColorPropertiesType = {
     default: {
       color: colorWhite,
       background: colorBrand1,
-      border: false,
+      border: colorBrand1,
       hoverColor: colorWhite,
       hoverBackground: colorHoverDark,
-      hoverBorder: false,
+      hoverBorder: colorHoverDark,
       outline: colorBrand1,
     },
     danger: {
