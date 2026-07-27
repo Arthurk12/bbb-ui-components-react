@@ -14,7 +14,7 @@ import {
   colorIconDefault,
   colorGray,
   colorBrandAux,
-} from '../../stylesheets/pallete';
+} from '../../stylesheets/palette';
 import { spacingMedium, spacingSmall, spacingSmallMedium } from '../../stylesheets/sizing';
 import { CSSColorPropertiesType, CSSSizePropertiesType, EssentialColorProperties } from './type';
 

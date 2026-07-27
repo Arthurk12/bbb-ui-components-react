@@ -18,7 +18,7 @@ import {
   borderRadiusSmall,
   spacingSmall,
 } from '../../stylesheets/sizing';
-import { colorBorderDefault, colorTextDefault } from '../../stylesheets/pallete';
+import { colorBorderDefault, colorTextDefault } from '../../stylesheets/palette';
 import { fontSizeSmall } from '../../stylesheets/typography';
 
 const commonButtonStyles = css<StyledButtonProps>`

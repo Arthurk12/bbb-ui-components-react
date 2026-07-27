@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorBorderDefault } from '../../stylesheets/pallete';
+import { colorBorderDefault } from '../../stylesheets/palette';
 
 export const Divider = styled.hr`
   width: 100%;

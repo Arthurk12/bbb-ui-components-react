@@ -7,7 +7,7 @@ import {
   colorIconDefault,
   colorIconBlue,
   colorBrand1,
-} from '../../stylesheets/pallete';
+} from '../../stylesheets/palette';
 import {
   spacingSmall,
   spacingMedium,

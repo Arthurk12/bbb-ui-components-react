@@ -1,7 +1,7 @@
 import { Switch } from '@mui/material';
 import { styled as materialStyled } from '@mui/material/styles';
 import styled, { css } from 'styled-components';
-import { colorBrand1, colorIconDefault, colorTextDefault, colorTextLight, colorWhite } from '../../stylesheets/pallete';
+import { colorBrand1, colorIconDefault, colorTextDefault, colorTextLight, colorWhite } from '../../stylesheets/palette';
 import { TEXT_POSITIONS } from './constants';
 import { StyledTextWrapperProps, StyledToggleWrapperProps } from './types';
 import { fontSizeBig, fontSizeDefault } from '../../stylesheets/typography';

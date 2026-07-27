@@ -1,3 +1,3 @@
 export * from './components';
-export * from './stylesheets/pallete';
+export * from './stylesheets/palette';
 export * from './stylesheets/sizing';
