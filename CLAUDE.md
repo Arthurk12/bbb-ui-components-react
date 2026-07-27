@@ -4,7 +4,7 @@ Guidance for Claude Code when working in this repository.
 
 ## Project overview
 
-`@mconf/bbb-ui-components-react` is a library of reusable React components extracted from BigBlueButton (BBB), published to npm. Each component lives in its own folder under `src/components/<Name>/` and is built/exported independently (tree-shakeable per-component entry points).
+`@bigbluebutton/bbb-ui-components-react` is a library of reusable React components extracted from BigBlueButton (BBB), published to npm. Each component lives in its own folder under `src/components/<Name>/` and is built/exported independently (tree-shakeable per-component entry points).
 
 `CHANGELOG.md` and the package version are generated automatically on release by `TriPSs/conventional-changelog-action` (see `.github/workflows/tag_and_release.yml`), using the `conventionalcommits` preset. This is why **correct commit type and scope matter**: they directly drive the changelog content and the version bump (see "Commit conventions" below).
 
@@ -30,7 +30,7 @@ Component folder/file names are **raw** PascalCase (`Button`, `Input`, `Navigati
 - `src/components/index.ts` — add `export { BBB<Name> } from './<Name>';` (keep alphabetical by folder name).
 - Root `README.md` — add `- [BBB<Name>](./src/components/<Name>/README.md)` to the "Available Components" list (keep alphabetical).
 - `webpack.config.babel.js` — add `<Name>: './src/components/<Name>/index.ts',` to the `entry` map.
-- `package.json` `exports` — add a `"./<Name>"` block, mirroring an existing one (e.g. copy the `"./Toggle"` block and replace `Toggle` with `<Name>` throughout). This is what makes `import { BBB<Name> } from '@mconf/bbb-ui-components-react/<Name>'` tree-shakeable.
+- `package.json` `exports` — add a `"./<Name>"` block, mirroring an existing one (e.g. copy the `"./Toggle"` block and replace `Toggle` with `<Name>` throughout). This is what makes `import { BBB<Name> } from '@bigbluebutton/bbb-ui-components-react/<Name>'` tree-shakeable.
 - `src/index.ts` needs **no** change — it already does `export * from './components'`, which picks up new components automatically.
 
 ## Adding a new prop to an existing component

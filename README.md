@@ -112,7 +112,7 @@ If you need to override colors for specific components or add new variables, ref
 You can install the library directly from npm:
 
 ```bash
-npm install @mconf/bbb-ui-components-react
+npm install @bigbluebutton/bbb-ui-components-react
 ```
 
 ## Local Development
