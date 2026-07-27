@@ -1,6 +1,6 @@
 import styled, { keyframes, css } from 'styled-components';
 import { StyledWrapperProps, StyledSvgProps, StyledPathProps } from './types';
-import { colorBrand1 } from '../../stylesheets/pallete';
+import { colorBrand1 } from '../../stylesheets/palette';
 
 const rotate = keyframes`
   0% { transform: rotate(0deg); }

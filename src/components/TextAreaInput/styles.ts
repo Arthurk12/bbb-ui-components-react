@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorBorderDefault, colorBrand1, colorBrand2, colorLightGray, colorWhite } from '../../stylesheets/pallete';
+import { colorBorderDefault, colorBrand1, colorBrand2, colorLightGray, colorWhite } from '../../stylesheets/palette';
 import { borderRadiusDefault } from '../../stylesheets/sizing';
 
 export const TextAreaInput = styled.textarea`

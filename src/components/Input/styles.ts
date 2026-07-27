@@ -7,7 +7,7 @@ import {
   colorTextLight,
   colorError,
   colorSuccess,
-} from '../../stylesheets/pallete';
+} from '../../stylesheets/palette';
 import { borderRadiusDefault, spacingSmall, spacingMedium } from '../../stylesheets/sizing';
 import { fontSizeSmall } from '../../stylesheets/typography';
 import { StyledContainerProps, StyledHelperTextProps } from './types';

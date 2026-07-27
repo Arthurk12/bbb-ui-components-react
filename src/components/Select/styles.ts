@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { borderRadiusSmall, spacingMedium, spacingSmall } from '../../stylesheets/sizing';
 import Select from '@mui/material/Select';
-import { colorBorderDefault, colorBrand1, colorDarkGray } from '../../stylesheets/pallete';
+import { colorBorderDefault, colorBrand1, colorDarkGray } from '../../stylesheets/palette';
 import { fontSizeSmall } from '../../stylesheets/typography';
 
 export const SelectContainer = styled.div`
