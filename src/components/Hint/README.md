@@ -53,14 +53,25 @@ const [open, setOpen] = useState(true);
 />
 ```
 
+### Hint Without a Close Button
+
+Pass `hideCloseButton` for hints that shouldn't be manually dismissed — e.g. ones dismissed by interacting with another UI element, or tooltip-style hints with no explicit dismiss action.
+
+```jsx
+import { BBBHint } from 'bbb-ui-components-react';
+
+<BBBHint hideCloseButton label="This hint cannot be manually dismissed." />
+```
+
 ## Props
 
-| Property         | Type                             | Default | Description                                                                          |
-| ---------------- | -------------------------------- | ------- | ------------------------------------------------------------------------------------ |
-| `label`          | `string`                         |         | The main text content of the hint.                                                   |
-| `title`          | `string`                         |         | An optional title shown in the header; when set, `label` renders as a separate line below instead of inline. |
-| `icon`           | `React.ReactNode`                |         | An optional icon to be displayed next to the title or label.                         |
-| `open`           | `boolean`                        |         | Whether the hint is visible. Omit to let the hint manage its own visibility, closing itself when the close button is clicked; pass a boolean to control visibility externally. |
-| `onRequestClose` | `() => void`                     |         | A callback function to be called when the close button is clicked, in both controlled and uncontrolled mode. |
-| `children`       | `React.ReactNode`                |         | Optional additional content to be displayed below the label.                         |
-| `...props`       | `HTMLAttributes<HTMLDivElement>` |         | Any other props will be passed down to the underlying container div.                 |
+| Property          | Type                             | Default | Description                                                                          |
+| ----------------- | -------------------------------- | ------- | ------------------------------------------------------------------------------------ |
+| `label`           | `string`                         |         | The main text content of the hint.                                                   |
+| `title`           | `string`                         |         | An optional title shown in the header; when set, `label` renders as a separate line below instead of inline. |
+| `icon`            | `React.ReactNode`                |         | An optional icon to be displayed next to the title or label.                         |
+| `open`            | `boolean`                        |         | Whether the hint is visible. Omit to let the hint manage its own visibility, closing itself when the close button is clicked; pass a boolean to control visibility externally. |
+| `onRequestClose`  | `() => void`                     |         | A callback function to be called when the close button is clicked, in both controlled and uncontrolled mode. |
+| `hideCloseButton` | `boolean`                        | `false` | Hides the close (X) button, for hints that shouldn't be manually dismissed.          |
+| `children`        | `React.ReactNode`                |         | Optional additional content to be displayed below the label.                         |
+| `...props`        | `HTMLAttributes<HTMLDivElement>` |         | Any other props will be passed down to the underlying container div.                 |

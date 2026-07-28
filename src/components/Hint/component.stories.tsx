@@ -28,6 +28,10 @@ const meta = {
       control: false,
       description: 'Callback fired when the close button is clicked, in both controlled and uncontrolled mode.',
     },
+    hideCloseButton: {
+      control: 'boolean',
+      description: "Hides the close (X) button, for hints that shouldn't be manually dismissed.",
+    },
     children: {
       control: false,
       description: 'Optional additional content rendered under the label.',
@@ -79,4 +83,13 @@ export const Controlled: Story = {
     label: "This hint's visibility is controlled externally via the open prop.",
   },
   render: (args) => <ControlledHintStory {...args} />,
+};
+
+/** Hint with `hideCloseButton`: no close (X) button, for hints that shouldn't be manually dismissed. */
+export const WithoutCloseButton: Story = {
+  args: {
+    title: 'No close button',
+    label: 'This hint cannot be manually dismissed.',
+    hideCloseButton: true,
+  },
 };

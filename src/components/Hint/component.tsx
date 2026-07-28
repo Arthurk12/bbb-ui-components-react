@@ -17,6 +17,7 @@ function Hint({
   icon = <MdInfo fontSize="1rem" />,
   open,
   onRequestClose,
+  hideCloseButton = false,
   children,
   ...rest
 }: HintProps): JSX.Element | null {
@@ -48,7 +49,7 @@ function Hint({
           {title && <Styled.Title>{title}</Styled.Title>}
           {!title && renderedLabel}
         </Styled.IconTextWrapper>
-        {title && (
+        {!hideCloseButton && (
           <Styled.CloseButton
             type="button"
             aria-label="Close"

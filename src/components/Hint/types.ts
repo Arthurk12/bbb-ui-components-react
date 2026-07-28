@@ -14,6 +14,9 @@ export interface HintProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Callback fired when the close button is clicked, in both controlled and uncontrolled mode. */
   onRequestClose?: () => void;
 
+  /** Hides the close (X) button, for hints that shouldn't be manually dismissed. @default false */
+  hideCloseButton?: boolean;
+
   /** Optional additional content rendered under the label. */
   children?: React.ReactNode;
 }
