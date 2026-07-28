@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { StyledTypography } from './types';
-import { colorTextDefault, colorTextLight } from '../../stylesheets/pallete';
+import { colorTextDefault, colorTextLight } from '../../stylesheets/palette';
 import {
   fontSizeDefault, fontSizeSmall,
   fontSizeXSmall, fontWeightDefault,

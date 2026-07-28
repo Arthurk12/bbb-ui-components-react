@@ -14,7 +14,7 @@ import {
   colorIconDefault,
   colorGray,
   colorBrandAux,
-} from '../../stylesheets/pallete';
+} from '../../stylesheets/palette';
 import { spacingMedium, spacingSmall, spacingSmallMedium } from '../../stylesheets/sizing';
 import { CSSColorPropertiesType, CSSSizePropertiesType, EssentialColorProperties } from './type';
 
@@ -46,6 +46,7 @@ const LAYOUTS = {
   DEFAULT: 'default',
   STACKED: 'stacked',
   CIRCLE: 'circle',
+  SQUARED: 'squared',
 } as const;
 const LAYOUT_VALUES = Object.values(LAYOUTS);
 const DEFAULT_LAYOUT = LAYOUT_VALUES[0];

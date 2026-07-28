@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Styles } from 'react-modal';
 import * as React from 'react';
 import { spacingLarge, spacingMedium, spacingSmallMedium, borderRadiusDefault } from '../../stylesheets/sizing';
-import { colorWhite } from '../../stylesheets/pallete';
+import { colorWhite } from '../../stylesheets/palette';
 import { StyledModalBodyProps, StyledModalFooterProps } from './types';
 
 export const modalStyles: Styles = {

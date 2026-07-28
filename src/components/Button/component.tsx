@@ -1,5 +1,7 @@
-import React, { JSX, useId } from 'react';
-import { MdSettings } from 'react-icons/md';
+import React, {
+  JSX, useCallback, useEffect, useId, useRef, useState,
+} from 'react';
+import { MdSettings, MdCheckCircle } from 'react-icons/md';
 import { ButtonProps } from './type';
 import {
   DEFAULT_VARIANT,
@@ -39,7 +41,27 @@ function Button(props: ButtonProps): JSX.Element {
     layout = DEFAULT_LAYOUT,
     disabled = false,
     children,
+    showFeedback = false,
+    feedbackContent = <MdCheckCircle fontSize="small" />,
+    feedbackDuration = 2000,
   } = props;
+
+  const feedbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [isFeedbackVisible, setFeedbackVisible] = useState(false);
+
+  useEffect(() => () => {
+    if (feedbackTimeoutRef.current) clearTimeout(feedbackTimeoutRef.current);
+  }, []);
+
+  const handleClick: React.MouseEventHandler<HTMLButtonElement> = useCallback((event) => {
+    onClick(event);
+
+    if (showFeedback) {
+      setFeedbackVisible(true);
+      if (feedbackTimeoutRef.current) clearTimeout(feedbackTimeoutRef.current);
+      feedbackTimeoutRef.current = setTimeout(() => setFeedbackVisible(false), feedbackDuration);
+    }
+  }, [onClick, showFeedback, feedbackDuration]);
 
   const accessibilityProps: {
     'aria-label'?: string;
@@ -48,12 +70,23 @@ function Button(props: ButtonProps): JSX.Element {
   } = {};
   const generatedId = useId();
   const defaultLabelId = `${id || generatedId}-label`;
+  // Only default aria-labelledby to defaultLabelId when an element with that id is
+  // actually rendered (stacked always renders ButtonText; default when labeled, or
+  // when the feedback content is taking the label's place). circle never renders a
+  // label element, so it must rely on aria-label instead — otherwise aria-labelledby
+  // would point at a non-existent id.
+  const hasRenderedLabelElement = layout === LAYOUTS.STACKED
+    || (layout === LAYOUTS.DEFAULT && (Boolean(label) || isFeedbackVisible));
   accessibilityProps['aria-label'] = ariaLabel || label;
-  accessibilityProps['aria-labelledby'] = ariaLabelledBy || defaultLabelId;
+  if (ariaLabelledBy) {
+    accessibilityProps['aria-labelledby'] = ariaLabelledBy;
+  } else if (hasRenderedLabelElement) {
+    accessibilityProps['aria-labelledby'] = defaultLabelId;
+  }
   if (ariaDescribedBy) accessibilityProps['aria-describedby'] = ariaDescribedBy;
 
   const buttonElement = (() => {
-    if (props.layout === LAYOUTS.CIRCLE) {
+    if (props.layout === LAYOUTS.CIRCLE || props.layout === LAYOUTS.SQUARED) {
       const { icon } = props;
       const testId = dataTest || `button-${id || 'default'}`;
 
@@ -61,7 +94,7 @@ function Button(props: ButtonProps): JSX.Element {
         <Styled.Button
           id={id}
           data-test={testId}
-          onClick={onClick}
+          onClick={handleClick}
           onKeyDown={onKeyDown}
           {...accessibilityProps}
           $color={color}
@@ -70,7 +103,11 @@ function Button(props: ButtonProps): JSX.Element {
           $layout={layout}
           disabled={disabled}
         >
-          {icon}
+          {isFeedbackVisible ? (
+            <Styled.FeedbackContent role="status" aria-live="polite">
+              {feedbackContent}
+            </Styled.FeedbackContent>
+          ) : icon}
         </Styled.Button>
       );
     }
@@ -88,7 +125,7 @@ function Button(props: ButtonProps): JSX.Element {
         <Styled.ButtonWrapper data-test={testId} $layout={layout}>
           <Styled.Button
             id={id}
-            onClick={onClick}
+            onClick={handleClick}
             onKeyDown={onKeyDown}
             {...accessibilityProps}
             $color={color}
@@ -118,7 +155,13 @@ function Button(props: ButtonProps): JSX.Element {
                 <Styled.HelperIcon>{helperIcon}</Styled.HelperIcon>
               </Styled.HelperIconContainer>
             )}
-            {icon && <Styled.IconWrapper>{icon}</Styled.IconWrapper>}
+            {isFeedbackVisible ? (
+              <Styled.IconWrapper>
+                <Styled.FeedbackContent role="status" aria-live="polite">
+                  {feedbackContent}
+                </Styled.FeedbackContent>
+              </Styled.IconWrapper>
+            ) : (icon && <Styled.IconWrapper>{icon}</Styled.IconWrapper>)}
           </Styled.Button>
           <Styled.ButtonText id={defaultLabelId}>{label}</Styled.ButtonText>
         </Styled.ButtonWrapper>
@@ -132,7 +175,7 @@ function Button(props: ButtonProps): JSX.Element {
       <Styled.Button
         id={id}
         data-test={testId}
-        onClick={onClick}
+        onClick={handleClick}
         onKeyDown={onKeyDown}
         {...accessibilityProps}
         $color={color}
@@ -141,10 +184,18 @@ function Button(props: ButtonProps): JSX.Element {
         $layout={layout}
         disabled={disabled}
       >
-        {iconStart && iconStart}
-        {label && <span id={defaultLabelId}>{label}</span>}
-        {children}
-        {iconEnd && iconEnd}
+        {isFeedbackVisible ? (
+          <Styled.FeedbackContent id={defaultLabelId} role="status" aria-live="polite">
+            {feedbackContent}
+          </Styled.FeedbackContent>
+        ) : (
+          <>
+            {iconStart && iconStart}
+            {label && <span id={defaultLabelId}>{label}</span>}
+            {children}
+            {iconEnd && iconEnd}
+          </>
+        )}
       </Styled.Button>
     );
   })();

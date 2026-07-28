@@ -4,7 +4,7 @@ import {
   colorBorderDefault, colorBorderSelected,
   colorTextDefault, colorTextLight,
   colorBorderError, colorError,
-} from '../../stylesheets/pallete';
+} from '../../stylesheets/palette';
 import { fontSizeSmall } from '../../stylesheets/typography';
 import { borderRadiusDefault, spacingMedium, spacingSmall } from '../../stylesheets/sizing';
 import { StyledTextProps } from './types';

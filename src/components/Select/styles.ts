@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { borderRadiusSmall, spacingMedium, spacingSmall } from '../../stylesheets/sizing';
 import Select from '@mui/material/Select';
-import { colorBorderDefault, colorBrand1, colorDarkGray } from '../../stylesheets/pallete';
+import { colorBorderDefault, colorBorderSelected, colorBrand1, colorDarkGray } from '../../stylesheets/palette';
 import { fontSizeSmall } from '../../stylesheets/typography';
 
 export const SelectContainer = styled.div`
@@ -28,7 +28,18 @@ export const Selector = styled(Select)`
   border-radius: ${borderRadiusSmall} !important;
   overflow: hidden;
   width: 100%;
-  border: 1px solid ${colorBorderDefault};
+
+  & .MuiOutlinedInput-notchedOutline {
+    border-color: ${colorBorderDefault};
+  }
+
+  &:hover .MuiOutlinedInput-notchedOutline {
+    border-color: ${colorBorderSelected};
+  }
+
+  &.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: ${colorBorderSelected};
+  }
 `;
 
 export const Title = styled.label`

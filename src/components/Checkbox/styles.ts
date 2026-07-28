@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Checkbox as MuiCheckbox } from '@mui/material';
-import { colorTextDefault, colorBrand1 } from '../../stylesheets/pallete';
+import { colorTextDefault, colorBrand1 } from '../../stylesheets/palette';
 import { fontSizeDefault } from '../../stylesheets/typography';
 import { spacingSmall } from '../../stylesheets/sizing';
 

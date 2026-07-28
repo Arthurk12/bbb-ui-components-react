@@ -50,6 +50,13 @@
       "require": "./dist/components/Hint.js",
       "default": "./dist/components/Hint.js"
     },
+    "./Input": {
+      "types": "./dist/types/components/Input/index.d.ts",
+      "node": "./dist/components/Input.js",
+      "import": "./dist/esm/components/Input/index.js",
+      "require": "./dist/components/Input.js",
+      "default": "./dist/components/Input.js"
+    },
     "./Modal": {
       "types": "./dist/types/components/Modal/index.d.ts",
       "node": "./dist/components/Modal.js",
@@ -172,6 +179,9 @@
       "Hint": [
         "dist/types/components/Hint/index.d.ts"
       ],
+      "Input": [
+        "dist/types/components/Input/index.d.ts"
+      ],
       "Modal": [
         "dist/types/components/Modal/index.d.ts"
       ],
@@ -230,8 +240,8 @@
   "peerDependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
-    "@mui/material": "^6.1.4 || ^7.0.0",
     "@mui/icons-material": "^6.1.4 || ^7.0.0",
+    "@mui/material": "^6.1.4 || ^7.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -247,6 +257,8 @@
     "@babel/preset-typescript": "^7.24.7",
     "@babel/register": "^7.24.6",
     "@eslint/js": "^9.33.0",
+    "@storybook/addon-a11y": "^8.6.18",
+    "@storybook/addon-actions": "^8.6.18",
     "@storybook/addon-docs": "^8.6.18",
     "@storybook/addon-links": "^8.6.18",
     "@storybook/addon-webpack5-compiler-babel": "^3.0.5",
@@ -262,6 +274,7 @@
     "eslint": "^9.33.0",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsdoc": "^62.9.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",

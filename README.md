@@ -11,6 +11,7 @@ Below is a list of the components available in this library. Each component has 
 - [BBBCheckbox](./src/components/Checkbox/README.md)
 - [BBBDivider](./src/components/Divider/README.md)
 - [BBBHint](./src/components/Hint/README.md)
+- [BBBInput](./src/components/Input/README.md)
 - [BBBModal](./src/components/Modal//README.md)
 - [BBBNavigation](./src/components/Navigation/README.md)
 - [BBBSearch](./src/components/Search/README.md)
@@ -71,28 +72,28 @@ The following table lists the supported CSS variables for color overriding, extr
 | `--color-light-gray`       | No                         | #F4F6FA      |
 | `--color-gray`             | No                         | #4E5A66      |
 | `--color-dark-gray`        | No                         | #393C48      |
-| `--color-brand-1`          | No                         | #1D65D4      |
-| `--color-brand-2`          | No                         | #1D65D4      |
-| `--color-brand-3`          | No                         | #1D65D4      |
+| `--color-brand-1`          | No                         | #0F70D7      |
+| `--color-brand-2`          | No                         | #0F70D7      |
+| `--color-brand-3`          | No                         | #0F70D7      |
 | `--color-brand-light`      | Yes (`--color-blue-aux`)   | #E5EFFB      |
 | `--color-brand-aux`        | Yes (`--color-brand-aux`)  | #E5EFFB      |
 | `--color-success`          | No                         | #2DD36F      |
 | `--color-warning`          | No                         | #F59240      |
-| `--color-error`            | Yes (`--color-danger`)     | #D6232D      |
-| `--color-error-dark`       | Yes (`--color-danger-dark`)| #B91C25      |
+| `--color-error`            | Yes (`--color-danger`)     | #DF2721      |
+| `--color-error-dark`       | Yes (`--color-danger-dark`)| #AE1010      |
 | `--color-background-white` | No                         | #FFFFFF      |
 | `--color-background-light` | No                         | #F4F6FA      |
 | `--color-background-blue`  | No                         | #E5EFFB      |
 | `--color-border-default`   | No                         | #B0BDC9      |
-| `--color-border-selected`  | No                         | #1D65D4      |
-| `--color-border-error`     | No                         | #D6232D      |
+| `--color-border-selected`  | No                         | #0F70D7      |
+| `--color-border-error`     | No                         | #DF2721      |
 | `--color-border-default`   | Yes (`--default-border`)   | #B0BDC9      |
 | `--color-text-default`     | No                         | #393C48      |
 | `--color-text-light`       | No                         | #717C91      |
 | `--color-icon-default`     | No                         | #717C91      |
-| `--color-icon-blue`        | No                         | #1D65D4      |
+| `--color-icon-blue`        | No                         | #0F70D7      |
 | `--color-icon-white`       | No                         | #FFFFFF      |
-| `--color-hover-dark`       | No                         | #1E53AF      |
+| `--color-hover-dark`       | No                         | #0C57A7      |
 | `--color-hover-light`      | No                         | #D4E5FA      |
 | `--color-hover-neutral`    | No                         | #DCE4EC      |
 
@@ -111,7 +112,7 @@ If you need to override colors for specific components or add new variables, ref
 You can install the library directly from npm:
 
 ```bash
-npm install @mconf/bbb-ui-components-react
+npm install @bigbluebutton/bbb-ui-components-react
 ```
 
 ## Local Development

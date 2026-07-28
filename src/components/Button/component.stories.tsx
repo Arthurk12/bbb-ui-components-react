@@ -2,7 +2,9 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import BBButton from './component';
-import { MdFavorite, MdMoreVert, MdSettings } from 'react-icons/md';
+import {
+  MdFavorite, MdMoreVert, MdSettings, MdCheckCircle, MdContentCopy,
+} from 'react-icons/md';
 import {
   VARIANT_VALUES,
   SIZE_VALUES,
@@ -69,7 +71,7 @@ const meta = {
     },
     icon: {
       control: false,
-      description: `Main icon for the button. Commonly used for icon-only buttons (layout 'circle') or in 'stacked' layout. When using a label, prefer \`iconStart\` or \`iconEnd\` in the 'default' layout.`,
+      description: `Main icon for the button. Commonly used for icon-only buttons (layouts 'circle' and 'squared') or in 'stacked' layout. When using a label, prefer \`iconStart\` or \`iconEnd\` in the 'default' layout.`,
       table: { defaultValue: { summary: 'null' } },
     },
     iconStart: {
@@ -102,6 +104,21 @@ const meta = {
       description: `Keyboard keydown event handler. Useful to handle custom keyboard interactions; receives the native keyboard event. Works across all layouts.`,
       table: { defaultValue: { summary: 'null' } },
     },
+    showFeedback: {
+      control: 'boolean',
+      description: 'When `true`, temporarily shows `feedbackContent` in place of the button\'s own label/icon for `feedbackDuration` after `onClick` fires.',
+      table: { defaultValue: { summary: 'false' } },
+    },
+    feedbackContent: {
+      control: false,
+      description: 'Content rendered while the click feedback is visible (e.g. a checkmark icon and "Copied"). Only relevant when `showFeedback` is `true`.',
+      table: { defaultValue: { summary: '<MdCheckCircle />' } },
+    },
+    feedbackDuration: {
+      control: { type: 'number', min: 0, step: 100 },
+      description: 'How long, in milliseconds, the click feedback stays visible. Only relevant when `showFeedback` is `true`.',
+      table: { defaultValue: { summary: '2000' } },
+    },
   },
 
   args: {
@@ -115,6 +132,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Renders the `primary` variant across all available colors. */
 export const Primary: Story = {
   name: 'Primary',
   args: {
@@ -134,6 +152,7 @@ export const Primary: Story = {
   ),
 };
 
+/** Renders the `secondary` variant across all available colors. */
 export const Secondary: Story = {
   name: 'Secondary',
   args: {
@@ -153,6 +172,7 @@ export const Secondary: Story = {
   ),
 };
 
+/** Renders the `tertiary` variant across all available colors. */
 export const Tertiary: Story = {
   name: 'Tertiary',
   args: {
@@ -172,6 +192,7 @@ export const Tertiary: Story = {
   ),
 };
 
+/** Renders the `subtle` variant across all available colors. */
 export const Subtle: Story = {
   name: 'Subtle',
   args: {
@@ -191,6 +212,7 @@ export const Subtle: Story = {
   ),
 };
 
+/** Renders the `stacked` layout with an icon and label across all available colors. */
 export const Stacked: Story = {
   name: 'Stacked',
   args: {
@@ -212,6 +234,7 @@ export const Stacked: Story = {
   ),
 };
 
+/** Demonstrates the `stacked` layout with a clickable helper icon separate from the main action. */
 export const StackedWithHelperClick: Story = {
   name: 'Stacked with Helper Click',
   args: {
@@ -225,6 +248,7 @@ export const StackedWithHelperClick: Story = {
   },
 };
 
+/** Renders the icon-only `circle` layout across all available colors, each with a tooltip. */
 export const Circle: Story = {
   name: 'Circle',
   args: {
@@ -247,6 +271,30 @@ export const Circle: Story = {
   ),
 };
 
+/** Renders the icon-only `squared` layout across all available colors, each with a tooltip. */
+export const Squared: Story = {
+  name: 'Squared',
+  args: {
+    tooltipPlacement: 'top',
+    variant: 'primary',
+    layout: 'squared',
+    icon: <MdFavorite size="1.25rem" />,
+  },
+  render: (args) => (
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+      {COLOR_VALUES.map((color) => (
+        <BBButton
+          {...args}
+          key={color}
+          color={color}
+          tooltipLabel={`Squared ${color.charAt(0).toUpperCase() + color.slice(1)}`}
+        />
+      ))}
+    </div>
+  ),
+};
+
+/** Shows a labeled button with a leading icon via `iconStart`. */
 export const WithIcon: Story = {
   args: {
     label: 'Like',
@@ -255,6 +303,7 @@ export const WithIcon: Story = {
   },
 };
 
+/** Renders every available `size` value side by side. */
 export const AllSizes: Story = {
   name: 'All Sizes',
   args: {
@@ -274,6 +323,7 @@ export const AllSizes: Story = {
   ),
 };
 
+/** Shows the button in its disabled state. */
 export const Disabled: Story = {
   args: {
     label: 'Disabled Button',
@@ -282,6 +332,7 @@ export const Disabled: Story = {
   },
 };
 
+/** Renders the same button with a tooltip in each of the available `tooltipPlacement` positions. */
 export const WithTooltip: Story = {
   name: 'With Tooltip (All Placements)',
   args: {
@@ -302,6 +353,7 @@ export const WithTooltip: Story = {
   ),
 };
 
+/** Compares buttons using `iconStart`, `iconEnd`, and both together. */
 export const WithStartAndEndIcons: Story = {
   name: 'With Start and End Icons',
   args: {
@@ -330,4 +382,20 @@ export const WithStartAndEndIcons: Story = {
       />
     </div>
   ),
+};
+
+/** Shows a transient "Copied" feedback in place of the label after clicking. */
+export const WithFeedback: Story = {
+  name: 'With Click Feedback',
+  args: {
+    label: 'Copy Link',
+    variant: 'primary',
+    iconStart: <MdContentCopy size="1.25rem" />,
+    showFeedback: true,
+    feedbackContent: (
+      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+        <MdCheckCircle /> Copied
+      </span>
+    ),
+  },
 };
