@@ -26,13 +26,41 @@ import { BBBHint } from 'bbb-ui-components-react';
 />
 ```
 
+### Uncontrolled Hint (default)
+
+Without an `open` prop, the hint manages its own visibility and closes itself when the close button is clicked — no external state required.
+
+```jsx
+import { BBBHint } from 'bbb-ui-components-react';
+
+<BBBHint label="This is a simple hint." />
+```
+
+### Controlled Hint
+
+Pass `open` to drive visibility externally; the hint calls `onRequestClose` instead of hiding itself, leaving the parent in charge of updating `open`.
+
+```jsx
+import { useState } from 'react';
+import { BBBHint } from 'bbb-ui-components-react';
+
+const [open, setOpen] = useState(true);
+
+<BBBHint
+  open={open}
+  onRequestClose={() => setOpen(false)}
+  label="This hint's visibility is controlled externally."
+/>
+```
+
 ## Props
 
 | Property         | Type                             | Default | Description                                                                          |
 | ---------------- | -------------------------------- | ------- | ------------------------------------------------------------------------------------ |
 | `label`          | `string`                         |         | The main text content of the hint.                                                   |
-| `title`          | `string`                         |         | An optional title for the hint. If provided, a close button will be displayed.       |
+| `title`          | `string`                         |         | An optional title shown in the header; when set, `label` renders as a separate line below instead of inline. |
 | `icon`           | `React.ReactNode`                |         | An optional icon to be displayed next to the title or label.                         |
-| `onRequestClose` | `() => void`                     |         | A callback function to be called when the close button is clicked.                   |
+| `open`           | `boolean`                        |         | Whether the hint is visible. Omit to let the hint manage its own visibility, closing itself when the close button is clicked; pass a boolean to control visibility externally. |
+| `onRequestClose` | `() => void`                     |         | A callback function to be called when the close button is clicked, in both controlled and uncontrolled mode. |
 | `children`       | `React.ReactNode`                |         | Optional additional content to be displayed below the label.                         |
 | `...props`       | `HTMLAttributes<HTMLDivElement>` |         | Any other props will be passed down to the underlying container div.                 |
