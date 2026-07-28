@@ -4,7 +4,7 @@ import * as Styled from './styles';
 import { MdExpandMore } from 'react-icons/md';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import { DEFAULT_TOOLTIP_PLACEMENT } from './constants';
+import { DEFAULT_TOOLTIP_PLACEMENT, DEFAULT_BUTTON_HEADER_POSITION } from './constants';
 
 /**
  * A customizable Accordion component that allows expanding and collapsing content.
@@ -21,6 +21,7 @@ function Accordion({
   ariaLabelledBy,
   ariaDescribedBy,
   buttonHeader = null,
+  buttonHeaderPosition = DEFAULT_BUTTON_HEADER_POSITION,
   children,
 }: AccordionProps): JSX.Element {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -38,7 +39,9 @@ function Accordion({
           <MdExpandMore />
         </Styled.ExpandIcon>
         <Styled.TitleText>{title}</Styled.TitleText>
-        {buttonHeader}
+        <Styled.ButtonHeaderWrapper $position={buttonHeaderPosition}>
+          {buttonHeader}
+        </Styled.ButtonHeaderWrapper>
       </Styled.ButtonContent>
     </Styled.ExpandButton>
   );
