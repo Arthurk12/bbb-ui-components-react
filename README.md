@@ -107,6 +107,28 @@ The following table lists the supported CSS variables for color overriding, extr
 
 If you need to override colors for specific components or add new variables, refer to the component's `styles.ts` file for implementation details.
 
+### Importing Color Tokens in JS
+
+In addition to CSS variables, the same color tokens used internally by every component are also
+exported as a nested `colors` object, for use directly in JS/TS (e.g. in your own
+styled-components):
+
+```jsx
+// From the package root
+import { colors } from '@bigbluebutton/bbb-ui-components-react';
+
+// Or from the dedicated, tree-shakeable subpath
+import { colors } from '@bigbluebutton/bbb-ui-components-react/colors';
+
+const StyledDiv = styled.div`
+  color: ${colors.text.default};
+  background: ${colors.background.white};
+`;
+```
+
+`colors` is grouped the same way as the table above: `neutral`, `brand`, `semantic`, `background`,
+`border`, `text`, `icon`, `hover`.
+
 ## Installation
 
 You can install the library directly from npm:

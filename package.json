@@ -120,6 +120,13 @@
       "require": "./dist/components/Typography.js",
       "default": "./dist/components/Typography.js"
     },
+    "./colors": {
+      "types": "./dist/types/stylesheets/colors.d.ts",
+      "node": "./dist/components/colors.js",
+      "import": "./dist/esm/stylesheets/colors.js",
+      "require": "./dist/components/colors.js",
+      "default": "./dist/components/colors.js"
+    },
     "./dist/components": {
       "types": "./dist/types/index.d.ts",
       "require": "./dist/components/index.js",
@@ -208,6 +215,9 @@
       ],
       "Typography": [
         "dist/types/components/Typography/index.d.ts"
+      ],
+      "colors": [
+        "dist/types/stylesheets/colors.d.ts"
       ]
     }
   },
