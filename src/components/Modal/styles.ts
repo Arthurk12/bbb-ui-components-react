@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Styles } from 'react-modal';
 import * as React from 'react';
 import { spacingLarge, spacingMedium, spacingSmallMedium, borderRadiusDefault } from '../../stylesheets/sizing';
-import { colorWhite } from '../../stylesheets/palette';
+import { colorWhite, colorOverlay } from '../../stylesheets/palette';
 import { StyledModalBodyProps, StyledModalFooterProps } from './types';
 
 export const modalStyles: Styles = {
@@ -12,7 +12,7 @@ export const modalStyles: Styles = {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    backgroundColor: colorOverlay,
     zIndex: 100,
     display: 'flex',
     alignItems: 'center',

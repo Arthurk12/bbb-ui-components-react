@@ -17,6 +17,7 @@ export default {
     TextInput: './src/components/TextInput/index.ts',
     Toggle: './src/components/Toggle/index.ts',
     Typography: './src/components/Typography/index.ts',
+    colors: './src/stylesheets/colors.ts',
     index: './src/index.ts',
   },
   output: {
