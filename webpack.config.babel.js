@@ -10,6 +10,7 @@ export default {
     Input: './src/components/Input/index.ts',
     Modal: './src/components/Modal/index.ts',
     Navigation: './src/components/Navigation/index.ts',
+    ScrollArea: './src/components/ScrollArea/index.ts',
     Search: './src/components/Search/index.ts',
     Select: './src/components/Select/index.ts',
     Spinner: './src/components/Spinner/index.ts',

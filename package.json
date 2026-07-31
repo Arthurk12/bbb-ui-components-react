@@ -71,6 +71,13 @@
       "require": "./dist/components/Navigation.js",
       "default": "./dist/components/Navigation.js"
     },
+    "./ScrollArea": {
+      "types": "./dist/types/components/ScrollArea/index.d.ts",
+      "node": "./dist/components/ScrollArea.js",
+      "import": "./dist/esm/components/ScrollArea/index.js",
+      "require": "./dist/components/ScrollArea.js",
+      "default": "./dist/components/ScrollArea.js"
+    },
     "./Search": {
       "types": "./dist/types/components/Search/index.d.ts",
       "node": "./dist/components/Search.js",
@@ -194,6 +201,9 @@
       ],
       "Navigation": [
         "dist/types/components/Navigation/index.d.ts"
+      ],
+      "ScrollArea": [
+        "dist/types/components/ScrollArea/index.d.ts"
       ],
       "Search": [
         "dist/types/components/Search/index.d.ts"
