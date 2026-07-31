@@ -1,7 +1,14 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import BBBAccordion from './component';
-import { TOOLTIP_PLACEMENT_VALUES, DEFAULT_TOOLTIP_PLACEMENT } from './constants';
+import {
+  TOOLTIP_PLACEMENT_VALUES,
+  DEFAULT_TOOLTIP_PLACEMENT,
+  BUTTON_HEADER_POSITIONS,
+  BUTTON_HEADER_POSITION_VALUES,
+  DEFAULT_BUTTON_HEADER_POSITION,
+} from './constants';
+import { MdEdit } from 'react-icons/md';
 import Typography from '../Typography/component';
 
 const meta = {
@@ -44,6 +51,14 @@ const meta = {
       control: false,
       description: 'Optional React node rendered inside the button header.',
     },
+    buttonHeaderPosition: {
+      control: 'select',
+      options: BUTTON_HEADER_POSITION_VALUES,
+      description: 'Position of `buttonHeader` within the header row.',
+      table: {
+        defaultValue: { summary: `${DEFAULT_BUTTON_HEADER_POSITION}` },
+      },
+    },
     children: {
       control: false,
       description: 'Content shown when the accordion is expanded.',
@@ -75,6 +90,20 @@ export const WithTooltip: Story = {
     children: (
       <div style={{ padding: '1rem' }}>
         <Typography>Content with tooltip.</Typography>
+      </div>
+    ),
+  },
+};
+
+/** Shows `buttonHeaderPosition="right"` pushing the button header to the far edge of the header row. */
+export const WithRightAlignedButtonHeader: Story = {
+  args: {
+    title: 'Right-aligned Button Header',
+    buttonHeader: <MdEdit aria-label="Edit" />,
+    buttonHeaderPosition: BUTTON_HEADER_POSITIONS.RIGHT,
+    children: (
+      <div style={{ padding: '1rem' }}>
+        <Typography>Accordion content goes here.</Typography>
       </div>
     ),
   },

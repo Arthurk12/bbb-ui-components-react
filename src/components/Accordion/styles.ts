@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colorBackgroundLight, colorBrand1, colorTextDefault, colorWhite } from '../../stylesheets/palette';
 import { fontSizeDefault } from '../../stylesheets/typography';
 import { borderRadiusDefault, spacingMedium, spacingSmall } from '../../stylesheets/sizing';
-import { StyledAccordionContent, StyledExpandIcon } from './types';
+import { StyledAccordionContent, StyledExpandIcon, StyledButtonHeaderWrapper } from './types';
 
 export const ExpandButton = styled.button`
   display: flex;
@@ -49,6 +49,12 @@ export const ExpandIcon = styled.div<StyledExpandIcon>`
   &:hover {
     filter: brightness(0.9);
   }
+`;
+
+export const ButtonHeaderWrapper = styled.span<StyledButtonHeaderWrapper>`
+  display: flex;
+  align-items: center;
+  margin-left: ${({ $position }) => ($position === 'right' ? 'auto' : '0')};
 `;
 
 export const TitleText = styled.span`
