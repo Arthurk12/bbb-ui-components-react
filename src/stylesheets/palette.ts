@@ -43,6 +43,7 @@ export const colorBorderSelected = `var(--color-border-selected, ${colorBrand1_b
 export const colorBorderError = `var(--color-border-error, ${colorError_base})`;
 // Mapped to core css vars
 export const colorBorderDefault = `var(--default-border, ${colorBorderDefault_base})`;
+export const colorBorderFocusRing = 'var(--color-border-focus-ring, rgba(29, 101, 212, 0.15))';
 
 
 // Text colors
@@ -53,8 +54,15 @@ export const colorTextLight = `var(--color-text-light, ${colorNeutral2})`;
 export const colorIconDefault = `var(--color-icon-default, ${colorNeutral2})`;
 export const colorIconBlue = `var(--color-icon-blue, ${colorBrand1_base})`;
 export const colorIconWhite = `var(--color-icon-white, ${colorWhite})`;
+export const colorIconDefaultDark = 'var(--color-icon-default-dark, rgba(255, 255, 255, 0.35))';
 
 //Hover colors
 export const colorHoverDark = 'var(--color-hover-dark, #0C57A7)';
 export const colorHoverLight = 'var(--color-hover-light, #D4E5FA)';
 export const colorHoverNeutral = `var(--color-hover-neutral, ${colorNeutral4})`;
+
+//Overlay colors
+export const colorOverlay = 'var(--color-overlay, rgba(0, 0, 0, 0.75))';
+
+//Shadow colors
+export const colorShadowDefault = 'var(--color-shadow-default, rgb(0 35 11 / 20%))';

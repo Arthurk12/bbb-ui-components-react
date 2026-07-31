@@ -3,10 +3,12 @@ import {
   colorBrand1, colorBrand2, colorBrand3, colorBrandLight, colorBrandAux,
   colorSuccess, colorWarning, colorError, colorErrorDark,
   colorBackgroundWhite, colorBackgroundLight, colorBackgroundBlue,
-  colorBorderDefault, colorBorderSelected, colorBorderError,
+  colorBorderDefault, colorBorderSelected, colorBorderError, colorBorderFocusRing,
   colorTextDefault, colorTextLight,
-  colorIconDefault, colorIconBlue, colorIconWhite,
+  colorIconDefault, colorIconBlue, colorIconWhite, colorIconDefaultDark,
   colorHoverDark, colorHoverLight, colorHoverNeutral,
+  colorOverlay,
+  colorShadowDefault,
 } from './palette';
 
 export const colors = {
@@ -41,6 +43,7 @@ export const colors = {
     default: colorBorderDefault,
     selected: colorBorderSelected,
     error: colorBorderError,
+    focusRing: colorBorderFocusRing,
   },
   text: {
     default: colorTextDefault,
@@ -50,11 +53,18 @@ export const colors = {
     default: colorIconDefault,
     blue: colorIconBlue,
     white: colorIconWhite,
+    defaultDark: colorIconDefaultDark,
   },
   hover: {
     dark: colorHoverDark,
     light: colorHoverLight,
     neutral: colorHoverNeutral,
+  },
+  overlay: {
+    default: colorOverlay,
+  },
+  shadow: {
+    default: colorShadowDefault,
   },
 } as const;
 

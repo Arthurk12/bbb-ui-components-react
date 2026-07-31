@@ -96,6 +96,10 @@ The following table lists the supported CSS variables for color overriding, extr
 | `--color-hover-dark`       | No                         | #0C57A7      |
 | `--color-hover-light`      | No                         | #D4E5FA      |
 | `--color-hover-neutral`    | No                         | #DCE4EC      |
+| `--color-border-focus-ring`| No                         | rgba(29, 101, 212, 0.15) |
+| `--color-icon-default-dark`| No                         | rgba(255, 255, 255, 0.35) |
+| `--color-overlay`          | No                         | rgba(0, 0, 0, 0.75) |
+| `--color-shadow-default`   | No                         | rgb(0 35 11 / 20%) |
 
 **Example Usage**:
 ```css

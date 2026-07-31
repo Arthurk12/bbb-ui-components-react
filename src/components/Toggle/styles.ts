@@ -1,7 +1,10 @@
 import { Switch } from '@mui/material';
 import { styled as materialStyled } from '@mui/material/styles';
 import styled, { css } from 'styled-components';
-import { colorBrand1, colorIconDefault, colorTextDefault, colorTextLight, colorWhite } from '../../stylesheets/palette';
+import {
+  colorBrand1, colorIconDefault, colorTextDefault, colorTextLight, colorWhite,
+  colorShadowDefault, colorIconDefaultDark,
+} from '../../stylesheets/palette';
 import { TEXT_POSITIONS } from './constants';
 import { StyledTextWrapperProps, StyledToggleWrapperProps } from './types';
 import { fontSizeBig, fontSizeDefault } from '../../stylesheets/typography';
@@ -103,7 +106,7 @@ export const MaterialToggle = materialStyled(Switch)(({ theme }) => ({
     },
   },
   '& .MuiSwitch-thumb': {
-    boxShadow: '0 2px 4px 0 rgb(0 35 11 / 20%)',
+    boxShadow: `0 2px 4px 0 ${colorShadowDefault}`,
     width: '0.6rem',
     height: '0.6rem',
     borderRadius: '0.5rem',
@@ -118,7 +121,7 @@ export const MaterialToggle = materialStyled(Switch)(({ theme }) => ({
     backgroundColor: colorIconDefault,
     boxSizing: 'border-box',
     ...theme.applyStyles('dark', {
-      backgroundColor: 'rgba(255,255,255,.35)',
+      backgroundColor: colorIconDefaultDark,
     }),
   },
 }));
