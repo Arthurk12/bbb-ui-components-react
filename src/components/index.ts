@@ -6,6 +6,7 @@ export { BBBHint } from './Hint';
 export { BBBInput } from './Input';
 export { BBBModal } from './Modal';
 export { BBBNavigation } from './Navigation';
+export { BBBScrollArea } from './ScrollArea';
 export { BBBSearch } from './Search';
 export { BBBSelect } from './Select';
 export { BBBSpinner } from './Spinner';
