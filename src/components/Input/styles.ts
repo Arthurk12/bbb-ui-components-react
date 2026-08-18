@@ -3,6 +3,7 @@ import {
   colorBorderDefault,
   colorBorderSelected,
   colorBorderError,
+  colorBorderFocusRing,
   colorTextDefault,
   colorTextLight,
   colorError,
@@ -41,7 +42,7 @@ export const FieldContainer = styled.div<StyledContainerProps>`
 
   &:focus-within {
     border-color: ${colorBorderSelected};
-    box-shadow: 0 0 0 3px var(--color-border-focus-ring, rgba(29, 101, 212, 0.15));
+    box-shadow: 0 0 0 3px ${colorBorderFocusRing};
   }
 
   ${({ $error }) =>

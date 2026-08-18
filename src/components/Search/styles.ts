@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import {
   colorBorderDefault,
   colorBorderSelected,
+  colorBorderFocusRing,
   colorTextDefault,
   colorTextLight,
   colorIconDefault,
@@ -36,7 +37,7 @@ export const Container = styled.div<ContainerProps>`
 
   &:focus-within {
     border-color: ${colorBorderSelected};
-    box-shadow: 0 0 0 3px var(--color-border-focus-ring, rgba(29, 101, 212, 0.15));
+    box-shadow: 0 0 0 3px ${colorBorderFocusRing};
   }
 
   ${({ $disabled }) =>

@@ -1,4 +1,4 @@
-import { TOOLTIP_PLACEMENT_VALUES } from './constants';
+import { TOOLTIP_PLACEMENT_VALUES, BUTTON_HEADER_POSITION_VALUES } from './constants';
 import * as React from 'react';
 
 export interface StyledExpandIcon {
@@ -10,7 +10,12 @@ export interface StyledAccordionContent {
   $scrollHeight: number;
 }
 
+export interface StyledButtonHeaderWrapper {
+  $position: ButtonHeaderPositionType;
+}
+
 type TooltipPlacementType = typeof TOOLTIP_PLACEMENT_VALUES[number];
+type ButtonHeaderPositionType = typeof BUTTON_HEADER_POSITION_VALUES[number];
 
 export interface AccordionProps {
   /** The text to be displayed in the accordion header. */
@@ -33,6 +38,9 @@ export interface AccordionProps {
 
   /** Optional React node rendered inside the button header, alongside the title. @default null */
   buttonHeader?: React.ReactNode;
+
+  /** Position of `buttonHeader` within the header row. @default 'left' */
+  buttonHeaderPosition?: ButtonHeaderPositionType;
 
   /** Content shown when the accordion is expanded. */
   children?: React.ReactNode;

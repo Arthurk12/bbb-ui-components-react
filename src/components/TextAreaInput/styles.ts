@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import { colorBorderDefault, colorBrand1, colorBrand2, colorLightGray, colorWhite } from '../../stylesheets/palette';
+import {
+  colorBorderDefault, colorBrand1, colorBrand2, colorTextDefault, colorTextLight, colorWhite,
+} from '../../stylesheets/palette';
 import { borderRadiusDefault } from '../../stylesheets/sizing';
 
 export const TextAreaInput = styled.textarea`
@@ -7,7 +9,7 @@ export const TextAreaInput = styled.textarea`
   background: ${colorWhite};
   background-clip: padding-box;
   margin: 0;
-  color: ${colorLightGray};
+  color: ${colorTextDefault};
   padding: calc(.3rem* 2.5) calc(.75rem* 1.25);
   resize: none;
   -webkit-transition: none;
@@ -20,6 +22,11 @@ export const TextAreaInput = styled.textarea`
   border: 1px solid ${colorBorderDefault};
   overflow-y: hidden;
   margin: 0.3em;
+
+  &::placeholder {
+    color: ${colorTextLight};
+  }
+
   &:focus {
     outline: ${colorBrand1} solid 2px;
     box-shadow: 0 0 0 2px ${colorBrand2} inset 0 0 0 1px ${colorBrand1};

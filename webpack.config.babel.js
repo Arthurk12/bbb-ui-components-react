@@ -10,6 +10,7 @@ export default {
     Input: './src/components/Input/index.ts',
     Modal: './src/components/Modal/index.ts',
     Navigation: './src/components/Navigation/index.ts',
+    ScrollArea: './src/components/ScrollArea/index.ts',
     Search: './src/components/Search/index.ts',
     Select: './src/components/Select/index.ts',
     Spinner: './src/components/Spinner/index.ts',
@@ -17,6 +18,7 @@ export default {
     TextInput: './src/components/TextInput/index.ts',
     Toggle: './src/components/Toggle/index.ts',
     Typography: './src/components/Typography/index.ts',
+    colors: './src/stylesheets/colors.ts',
     index: './src/index.ts',
   },
   output: {
