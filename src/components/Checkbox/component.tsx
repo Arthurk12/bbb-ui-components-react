@@ -18,10 +18,13 @@ function Checkbox({
   round = false,
   ariaLabel,
   id,
+  dataTest,
+  inputProps,
   ...props
 }: CheckboxProps): JSX.Element {
   const generatedId = useId();
   const checkboxId = id ?? generatedId;
+  const mergedInputProps = { 'data-test': dataTest, ...inputProps };
   const checkbox = (
     <Styled.StyledCheckbox
       {...props}
@@ -29,6 +32,7 @@ function Checkbox({
       aria-label={ariaLabel}
       icon={round ? <RadioButtonUnchecked /> : undefined}
       checkedIcon={round ? <RadioButtonChecked /> : undefined}
+      inputProps={mergedInputProps}
     />
   );
 
