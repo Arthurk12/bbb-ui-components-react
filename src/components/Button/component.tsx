@@ -10,6 +10,7 @@ import {
   DEFAULT_LAYOUT,
   LAYOUTS,
   DEFAULT_TOOLTIP_PLACEMENT,
+  DEFAULT_TYPE,
 } from './constants';
 import * as Styled from './styles';
 import Tippy from '@tippyjs/react';
@@ -39,6 +40,7 @@ function Button(props: ButtonProps): JSX.Element {
     variant = DEFAULT_VARIANT,
     size = DEFAULT_SIZE,
     layout = DEFAULT_LAYOUT,
+    type = DEFAULT_TYPE,
     disabled = false,
     children,
     showFeedback = false,
@@ -93,7 +95,7 @@ function Button(props: ButtonProps): JSX.Element {
       return (
         <Styled.Button
           id={id}
-          type="button"
+          type={type}
           data-test={testId}
           onClick={handleClick}
           onKeyDown={onKeyDown}
@@ -126,7 +128,7 @@ function Button(props: ButtonProps): JSX.Element {
         <Styled.ButtonWrapper data-test={testId} $layout={layout}>
           <Styled.Button
             id={id}
-            type="button"
+            type={type}
             onClick={handleClick}
             onKeyDown={onKeyDown}
             {...accessibilityProps}
@@ -176,7 +178,7 @@ function Button(props: ButtonProps): JSX.Element {
     return (
       <Styled.Button
         id={id}
-        type="button"
+        type={type}
         data-test={testId}
         onClick={handleClick}
         onKeyDown={onKeyDown}
