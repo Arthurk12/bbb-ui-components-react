@@ -1,4 +1,5 @@
 export { BBBAccordion } from './Accordion';
+export { BBBAvatar } from './Avatar';
 export { BBButton } from './Button';
 export { BBBCheckbox } from './Checkbox';
 export { BBBDivider } from './Divider';
@@ -9,6 +10,7 @@ export { BBBNavigation } from './Navigation';
 export { BBBScrollArea } from './ScrollArea';
 export { BBBSearch } from './Search';
 export { BBBSelect } from './Select';
+export { BBBSlider } from './Slider';
 export { BBBSpinner } from './Spinner';
 export { BBBTextAreaInput } from './TextAreaInput';
 export { BBBTextInput } from './TextInput';
