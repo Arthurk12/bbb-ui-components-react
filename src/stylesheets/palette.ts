@@ -2,10 +2,12 @@
 export const colorNeutral2 = 'var(--color-neutral-2, #717C91)';
 export const colorNeutral3 = 'var(--color-neutral-3, #B0BDC9)';
 export const colorNeutral4 = 'var(--color-neutral-4, #DCE4EC)';
-export const colorWhite = 'var(--color-neutral-white, #FFFFFF)';
 export const colorLightGray = 'var(--color-light-gray, #F4F6FA)';
 export const colorGray = 'var(--color-gray, #4E5A66)';
 export const colorDarkGray = 'var(--color-dark-gray, #393C48)';
+const colorWhite_base = 'var(--color-neutral-white, #FFFFFF)';
+// Mapped to core css vars
+export const colorWhite = `var(--color-white, ${colorWhite_base})`;
 
 // Brand colors
 // Last-resort fallbacks mirror bigbluebutton-html5's palette so that a client
