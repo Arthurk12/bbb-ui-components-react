@@ -41,7 +41,7 @@ export const colorBackgroundBlue = `var(--color-background-blue, ${colorBrandLig
 
 // Border colors
 const colorBorderDefault_base = `var(--color-border-default, ${colorNeutral3})`;
-export const colorBorderSelected = `var(--color-border-selected, ${colorBrand1_base})`;
+export const colorBorderSelected = `var(--color-border-selected, ${colorBrand1})`;
 export const colorBorderError = `var(--color-border-error, ${colorError_base})`;
 // Mapped to core css vars
 export const colorBorderDefault = `var(--default-border, ${colorBorderDefault_base})`;
