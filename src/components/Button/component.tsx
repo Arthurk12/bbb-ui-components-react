@@ -93,6 +93,7 @@ function Button(props: ButtonProps): JSX.Element {
       return (
         <Styled.Button
           id={id}
+          type="button"
           data-test={testId}
           onClick={handleClick}
           onKeyDown={onKeyDown}
@@ -125,6 +126,7 @@ function Button(props: ButtonProps): JSX.Element {
         <Styled.ButtonWrapper data-test={testId} $layout={layout}>
           <Styled.Button
             id={id}
+            type="button"
             onClick={handleClick}
             onKeyDown={onKeyDown}
             {...accessibilityProps}
@@ -174,6 +176,7 @@ function Button(props: ButtonProps): JSX.Element {
     return (
       <Styled.Button
         id={id}
+        type="button"
         data-test={testId}
         onClick={handleClick}
         onKeyDown={onKeyDown}
